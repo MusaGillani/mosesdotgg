@@ -1,6 +1,7 @@
 import Card from "./card";
 import { skills } from "@/constants/skills";
 import { sigmar, roboto } from "@/fonts";
+import { Fragment } from "react";
 
 const Skills: React.FC = () => {
   return (
@@ -14,7 +15,15 @@ const Skills: React.FC = () => {
       </p>
       <div className="mx-auto my-10 grid w-4/5 grid-cols-1 place-items-center gap-y-8 sm:grid-cols-2 md:w-full md:grid-cols-6">
         {skills.map(({ icon, title, href }) => (
-          <Card title={title} icon={icon} key={title} href={href} />
+          <Fragment key={title}>
+            <Card title={title} icon={icon} href={href} />
+            <a
+              href={href}
+              className={`overflow-hidden text-ellipsis text-2xl text-white sm:hidden md:block ${sigmar.className} transition delay-150 ease-in-out hover:-translate-y-5`}
+            >
+              {title}
+            </a>
+          </Fragment>
         ))}
       </div>
     </div>

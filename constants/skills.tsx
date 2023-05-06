@@ -16,9 +16,9 @@ export const skills = [
     href: "https://www.typescriptlang.org/",
   },
   { title: "React", icon: <FaReact />, href: "https://react.dev/" },
-  { title: "Next", icon: <TbBrandNextjs />, href: "https://nextjs.org/" },
+  { title: "Next JS", icon: <TbBrandNextjs />, href: "https://nextjs.org/" },
   { title: "Flutter", icon: <RiFlutterFill />, href: "https://flutter.dev/" },
-  { title: "Node", icon: <IoLogoNodejs />, href: "https://nodejs.org/en" },
+  { title: "Node JS", icon: <IoLogoNodejs />, href: "https://nodejs.org/en" },
   { title: "Express", icon: <SiExpress />, href: "https://expressjs.com/" },
   {
     title: "PostgreSQL",

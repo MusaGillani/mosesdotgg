@@ -1,9 +1,8 @@
 import Image from "next/image";
-import { VscGithubInverted } from "react-icons/vsc";
-import { BsTwitter } from "react-icons/bs";
 import { useState } from "react";
 
 import { sigmar, roboto } from "@/fonts";
+import { AnimatedGithub, AnimatedTwitter } from "@/icons";
 
 const ProfileBio: React.FC = () => {
   const [animate, setAnimate] = useState(false);
@@ -36,10 +35,10 @@ const ProfileBio: React.FC = () => {
       </p>
       <div className="my-2 flex text-4xl">
         <a href="https://github.com/MusaGillani" target="_blank">
-          <VscGithubInverted className="m-2 ml-0 transition delay-150 ease-in-out hover:rotate-12 hover:scale-150" />
+          <AnimatedGithub />
         </a>
         <a href="https://twitter.com/mosesdotgg" target="_blank">
-          <BsTwitter className="m-2 transition delay-150 ease-in-out hover:rotate-12 hover:scale-150" />
+          <AnimatedTwitter />
         </a>
       </div>
     </div>

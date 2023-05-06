@@ -12,7 +12,7 @@ const Skills: React.FC = () => {
         Although I&apos;m curious to learn about new technologies, these are the
         tools I&apos;m experienced with
       </p>
-      <div className="mx-auto my-10 grid w-4/5 grid-cols-2 place-items-center gap-y-8 md:w-full md:grid-cols-6">
+      <div className="mx-auto my-10 grid w-4/5 grid-cols-1 place-items-center gap-y-8 sm:grid-cols-2 md:w-full md:grid-cols-6">
         {skills.map(({ icon, title, href }) => (
           <Card title={title} icon={icon} key={title} href={href} />
         ))}

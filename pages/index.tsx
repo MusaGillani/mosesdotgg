@@ -3,6 +3,7 @@ import Description from "@/components/description";
 import NavBar from "@/components/navBar";
 import ProfileBio from "@/components/profileBio";
 import Skills from "@/components/skills";
+import Experience from "@/components/experience";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <ProfileBio />
         <Description />
         <Skills />
+        <Experience />
       </main>
     </>
   );

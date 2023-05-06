@@ -29,15 +29,16 @@ const ProfileBio: React.FC = () => {
         <a
           href="https://devsinc.com/"
           className="font-bold text-discord-purple"
+          target="_blank"
         >
           @Devsinc
         </a>
       </p>
       <div className="my-2 flex text-4xl">
-        <a href="https://github.com/MusaGillani">
+        <a href="https://github.com/MusaGillani" target="_blank">
           <VscGithubInverted className="m-2 ml-0 transition delay-150 ease-in-out hover:rotate-12 hover:scale-150" />
         </a>
-        <a href="https://twitter.com/mosesdotgg">
+        <a href="https://twitter.com/mosesdotgg" target="_blank">
           <BsTwitter className="m-2 transition delay-150 ease-in-out hover:rotate-12 hover:scale-150" />
         </a>
       </div>

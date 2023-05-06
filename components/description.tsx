@@ -13,7 +13,11 @@ const Description: React.FC = () => {
       </p>
       <p>
         Currently working with{" "}
-        <a href="https://nestjs.org" className="font-bold text-discord-purple ">
+        <a
+          href="https://nestjs.org"
+          className="font-bold text-discord-purple"
+          target="_blank"
+        >
           @Next JS
         </a>{" "}
         and learning about React Server Components and Island Architecture

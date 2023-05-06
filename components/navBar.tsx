@@ -1,9 +1,7 @@
 import React from "react";
-import { Sigmar } from "next/font/google";
+import { sigmar } from "@/fonts";
 
 import ThemeSwitch from "@/components/themeSwitch";
-
-const sigmar = Sigmar({ weight: "400", subsets: ["latin"] });
 
 const NavBar: React.FC = () => {
   return (

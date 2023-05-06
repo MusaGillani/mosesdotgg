@@ -19,7 +19,7 @@ const Skills: React.FC = () => {
             <Card title={title} icon={icon} href={href} />
             <a
               href={href}
-              className={`overflow-hidden text-ellipsis text-2xl text-white sm:hidden md:block ${sigmar.className} transition delay-150 ease-in-out hover:-translate-y-5`}
+              className={`hidden overflow-hidden text-ellipsis text-2xl text-white md:block ${sigmar.className} transition delay-150 ease-in-out hover:-translate-y-5`}
             >
               {title}
             </a>

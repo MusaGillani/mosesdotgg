@@ -6,9 +6,7 @@ import { Fragment } from "react";
 const Skills: React.FC = () => {
   return (
     <div>
-      <h1 className={`mt-10 text-3xl ${sigmar.className} sticky top-5`}>
-        SKILLS
-      </h1>
+      <h1 className={`mt-10 text-3xl ${sigmar.className}`}>SKILLS</h1>
       <p className={`${roboto.className}`}>
         Although I&apos;m curious to learn about new technologies, these are the
         tools I&apos;m experienced with

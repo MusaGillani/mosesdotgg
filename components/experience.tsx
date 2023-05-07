@@ -5,9 +5,7 @@ import { experiences } from "@/constants/experiences";
 const Experience: React.FC = () => {
   return (
     <div>
-      <h1 className={`mt-10 text-3xl ${sigmar.className} sticky top-5`}>
-        EXPERIENCE
-      </h1>
+      <h1 className={`mt-10 text-3xl ${sigmar.className}`}>EXPERIENCE</h1>
       <p className={`${roboto.className}`}>
         I&apos;ve had the honour of working at these amazing companies.
         Hopefully your company will be there too.

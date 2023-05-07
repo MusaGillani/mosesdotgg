@@ -4,6 +4,7 @@ import NavBar from "@/components/navBar";
 import ProfileBio from "@/components/profileBio";
 import Skills from "@/components/skills";
 import Experience from "@/components/experience";
+import Projects from "@/components/projects";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <Description />
         <Skills />
         <Experience />
+        <Projects />
       </main>
     </>
   );

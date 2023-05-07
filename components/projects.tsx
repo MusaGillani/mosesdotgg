@@ -7,9 +7,9 @@ const Projects: React.FC = () => {
   return (
     <div>
       <h1 className={`mt-10 text-3xl ${sigmar.className}`}>PROJECTS</h1>
-      <div className="my-5 flex w-full rounded-lg">
+      <div className="relative my-5 flex w-full rounded-lg md:static">
         {/* CARD */}
-        <div className="h-1/6 w-2/3 rounded-lg bg-black p-5">
+        <div className="absolute h-full w-full rounded-lg bg-black p-5 opacity-95 md:static md:h-1/6 md:w-2/3 md:opacity-100">
           <Image
             src={complaintronix}
             alt="complaintronix logo"
@@ -19,25 +19,25 @@ const Projects: React.FC = () => {
             COMPLAINTRONIX
           </p>
         </div>
-        <div className="w-1/3 text-right">
+        <div className="z-10 w-full md:w-1/3 md:text-right">
           <p
-            className={`m-5 text-2xl font-bold text-slate-600 dark:text-gray-400 ${rubik.className}`}
+            className={`m-5 text-2xl font-bold text-white dark:text-gray-400 md:text-slate-600 ${rubik.className}`}
           >
             COMPLAINTRONIX
           </p>
           <p
-            className={`m-5 text-2xl font-bold text-slate-600 dark:text-gray-400 ${rubik.className}`}
+            className={`m-5 text-2xl font-bold text-white dark:text-gray-400 md:text-slate-600 ${rubik.className}`}
           >
             Semester Project
           </p>
-          <div className="relative right-3/4 m-5 w-[40vw] overflow-hidden rounded-lg bg-slate-200 p-6 shadow-lg dark:bg-gray-800 dark:shadow dark:shadow-black lg:w-[30vw]">
-            <p className="">
+          <div className="right-3/4 w-[40vw] overflow-hidden rounded-lg bg-transparent p-6 shadow-lg md:relative md:m-5 md:bg-slate-200 dark:md:bg-gray-800 dark:md:shadow dark:md:shadow-black lg:w-[30vw]">
+            <p className="text-white dark:text-white md:text-black dark:md:text-black">
               A Mobile application to register and manage student complaints
               related to their internet connections in GIKI hostels
             </p>
           </div>
           <p
-            className={`m-5 font-bold text-slate-600 dark:text-gray-400 ${rubik.className}`}
+            className={`text-md m-5 truncate font-bold text-white dark:text-gray-400 md:text-slate-600 ${rubik.className}`}
           >
             Flutter Express Firebase MySQL
           </p>
@@ -46,7 +46,7 @@ const Projects: React.FC = () => {
               href="https://github.com/MusaGillani/complaintronix-flutter"
               target="_blank"
             >
-              <AnimatedGithub />
+              <AnimatedGithub className="text-white dark:text-white md:text-black" />
             </a>
           </div>
         </div>

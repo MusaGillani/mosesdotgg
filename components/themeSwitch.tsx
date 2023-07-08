@@ -1,11 +1,8 @@
 "use client";
-import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { BsMoonFill, BsSunFill } from "react-icons/bs";
 import { useTheme } from "next-themes";
 
-
 const ThemeSwitch: React.FC = () => {
-  const [parent] = useAutoAnimate();
   const { resolvedTheme, setTheme } = useTheme();
 
   const toggleTheme: React.MouseEventHandler<HTMLButtonElement> = () => {
@@ -15,10 +12,11 @@ const ThemeSwitch: React.FC = () => {
   return (
     <button
       onClick={toggleTheme}
-      ref={parent}
-      className="rounded-lg bg-purple-200 p-5 dark:bg-teal-900"
+      className="inline-flex items-center justify-center rounded-lg bg-purple-200 p-5 dark:bg-teal-900"
     >
-      {resolvedTheme === "dark" ? <BsSunFill className="text-white" /> : <BsMoonFill />}
+      <BsSunFill className="rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+      <BsMoonFill className="absolute rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+      <span className="sr-only">Toggle theme</span>
     </button>
   );
 };

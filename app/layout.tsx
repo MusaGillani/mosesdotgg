@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 
 import { Providers } from "./providers";
-import ThemeSwitch from "@/components/themeSwitch";
 
 import "@/styles/globals.css";
 
@@ -17,10 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Providers>
-        <ThemeSwitch />
-        <body>{children}</body>
-      </Providers>
+      <body>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }

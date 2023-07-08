@@ -2,6 +2,8 @@ import { Metadata } from "next";
 
 import { Providers } from "./providers";
 
+import { cn } from "@/lib/utils";
+import { roboto } from "@/fonts";
 import "@/styles/globals.css";
 
 export const metadata: Metadata = {
@@ -16,7 +18,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body
+        className={cn(
+          "h-full min-h-screen bg-white dark:bg-black dark:text-white ",
+          roboto.className
+        )}
+      >
         <Providers>{children}</Providers>
       </body>
     </html>

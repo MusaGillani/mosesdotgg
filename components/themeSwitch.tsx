@@ -1,3 +1,4 @@
+"use client";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { BsMoonFill, BsSunFill } from "react-icons/bs";
 

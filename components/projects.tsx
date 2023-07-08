@@ -31,7 +31,7 @@ const Projects: React.FC = () => {
             Semester Project
           </p>
           <div className="right-3/4 w-[40vw] overflow-hidden rounded-lg bg-transparent p-6 shadow-lg md:relative md:m-5 md:bg-slate-200 dark:md:bg-gray-800 dark:md:shadow dark:md:shadow-black lg:w-[30vw]">
-            <p className="text-white dark:text-white md:text-black dark:md:text-black">
+            <p className="text-white dark:text-white md:text-black">
               A Mobile application to register and manage student complaints
               related to their internet connections in GIKI hostels
             </p>

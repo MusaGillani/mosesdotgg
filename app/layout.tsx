@@ -7,7 +7,7 @@ import { roboto } from "@/fonts";
 import "@/styles/globals.css";
 
 export const metadata: Metadata = {
-  title: "Moses.gg new",
+  title: "Moses.gg",
   description: "Welcome to Moses.gg",
 };
 

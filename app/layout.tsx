@@ -1,5 +1,8 @@
 import { Metadata } from "next";
 
+import { Providers } from "./providers";
+import ThemeSwitch from "@/components/themeSwitch";
+
 import "@/styles/globals.css";
 
 export const metadata: Metadata = {
@@ -14,7 +17,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <Providers>
+        <ThemeSwitch />
+        <body>{children}</body>
+      </Providers>
     </html>
   );
 }

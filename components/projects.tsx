@@ -7,7 +7,7 @@ const Projects: React.FC = () => {
   return (
     <div>
       <h1 className={`mt-10 text-3xl ${sigmar.className}`}>PROJECTS</h1>
-      <div className="relative my-5 flex w-full rounded-lg md:static">
+      <div className="relative my-5 flex w-full rounded-lg dark:border-4 dark:border-slate-500 md:static">
         {/* CARD */}
         <div className="absolute h-full w-full rounded-lg bg-black p-5 opacity-95 md:static md:h-1/6 md:w-2/3 md:opacity-100">
           <Image
@@ -36,18 +36,20 @@ const Projects: React.FC = () => {
               related to their internet connections in GIKI hostels
             </p>
           </div>
-          <p
-            className={`text-md m-5 truncate font-bold text-white dark:text-gray-400 md:text-slate-600 ${rubik.className}`}
-          >
-            Flutter Express Firebase MySQL
-          </p>
-          <div className="m-5 text-3xl">
-            <a
-              href="https://github.com/MusaGillani/complaintronix-flutter"
-              target="_blank"
+          <div className="flex w-full justify-between md:block">
+            <p
+              className={`text-md m-5 truncate text-center font-bold text-white dark:text-gray-400 md:text-slate-600 ${rubik.className}`}
             >
-              <AnimatedGithub className="text-white dark:text-white md:text-black" />
-            </a>
+              Flutter Express Firebase MySQL
+            </p>
+            <div className="m-5 text-3xl">
+              <a
+                href="https://github.com/MusaGillani/complaintronix-flutter"
+                target="_blank"
+              >
+                <AnimatedGithub className="text-white dark:text-white md:text-black" />
+              </a>
+            </div>
           </div>
         </div>
       </div>

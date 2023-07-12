@@ -2,11 +2,11 @@ import Card from "./card";
 import { skills } from "@/constants/skills";
 import { sigmar, roboto } from "@/fonts";
 import { Fragment } from "react";
+import ExpandableSection from "./expandableSection";
 
 const Skills: React.FC = () => {
   return (
-    <div>
-      <h1 className={`mt-10 text-3xl ${sigmar.className}`}>SKILLS</h1>
+    <ExpandableSection sectionName="SKILLS">
       <p className={`${roboto.className}`}>
         Although I&apos;m curious to learn about new technologies, these are the
         tools I&apos;m experienced with
@@ -24,7 +24,7 @@ const Skills: React.FC = () => {
           </Fragment>
         ))}
       </div>
-    </div>
+    </ExpandableSection>
   );
 };
 

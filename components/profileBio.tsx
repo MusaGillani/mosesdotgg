@@ -3,14 +3,15 @@
 import Image from "next/image";
 import { useState } from "react";
 
+import { cn } from "@/lib/utils";
 import { sigmar, roboto } from "@/fonts";
 import { AnimatedGithub, AnimatedTwitter } from "@/icons";
 
-const ProfileBio: React.FC = () => {
+const ProfileBio: React.FC<{ className?: string }> = ({ className }) => {
   const [animate, setAnimate] = useState(false);
 
   return (
-    <div className={`mt-10 font-normal ${sigmar.className}`}>
+    <div className={cn("mt-10 font-normal", sigmar.className, className)}>
       <Image
         src="https://avatars.githubusercontent.com/u/62158726?v=4"
         alt="profile image"

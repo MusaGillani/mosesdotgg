@@ -10,13 +10,13 @@ export default function Home() {
   return (
     <>
       <Banner />
-      <main className={`px-10 py-10 lg:px-48`}>
-        <NavBar />
-        <ProfileBio />
-        <Description />
-        <Skills />
-        <Experience />
-        <Projects />
+      <main className={`flex flex-col px-10 py-10 lg:px-48`}>
+        <NavBar className="order-1" />
+        <ProfileBio className="order-2" />
+        <Description className="order-3" />
+        <Skills className="order-5 md:order-4" />
+        <Experience className="order-4 md:order-5" />
+        <Projects className="order-6" />
       </main>
     </>
   );

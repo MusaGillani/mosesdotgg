@@ -1,11 +1,12 @@
 import { sigmar, roboto } from "@/fonts";
 import Stepper from "./stepper";
 import { experiences } from "@/constants/experiences";
+import { cn } from "@/lib/utils";
 
-const Experience: React.FC = () => {
+const Experience: React.FC<{ className?: string }> = ({ className }) => {
   return (
-    <div>
-      <h1 className={`mt-10 text-3xl ${sigmar.className}`}>EXPERIENCE</h1>
+    <div className={className}>
+      <h1 className={cn("mt-10 text-3xl", sigmar.className)}>EXPERIENCE</h1>
       <p className={`${roboto.className}`}>
         I&apos;ve had the honour of working at these amazing companies.
         Hopefully your company will be there too.

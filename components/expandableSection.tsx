@@ -5,14 +5,18 @@ import { PropsWithChildren, useState } from "react";
 import { sigmar } from "@/fonts";
 import useComponentSize from "@/hooks/useComponentSize";
 
-type Props = PropsWithChildren<{ sectionName: string }>;
+type Props = PropsWithChildren<{ sectionName: string; className?: string }>;
 
-const ExpandableSection: React.FC<Props> = ({ sectionName, children }) => {
+const ExpandableSection: React.FC<Props> = ({
+  sectionName,
+  children,
+  className,
+}) => {
   const [isExpanded, setIsExpanded] = useState(true);
   const [ref, contentMaxHeight] = useComponentSize();
 
   return (
-    <>
+    <div className={className}>
       <div className="mt-10 flex w-full items-center justify-between text-3xl">
         <h1 className={`${sigmar.className}`}>{sectionName}</h1>
         <button
@@ -37,7 +41,7 @@ const ExpandableSection: React.FC<Props> = ({ sectionName, children }) => {
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 };
 

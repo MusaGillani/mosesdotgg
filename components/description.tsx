@@ -1,8 +1,9 @@
+import { cn } from "@/lib/utils";
 import { roboto } from "@/fonts";
 
-const Description: React.FC = () => {
+const Description: React.FC<{ className?: string }> = ({ className }) => {
   return (
-    <div className={`text-xl ${roboto.className} mt-10`}>
+    <div className={cn("mt-10 text-xl", roboto.className, className)}>
       <p>
         I&apos;m an associate software engineer at Devsinc, graduated with a
         Bachelor&apos;s in Computer Engineering from GIK

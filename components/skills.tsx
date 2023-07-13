@@ -4,9 +4,9 @@ import { sigmar, roboto } from "@/fonts";
 import { Fragment } from "react";
 import ExpandableSection from "./expandableSection";
 
-const Skills: React.FC = () => {
+const Skills: React.FC<{ className?: string }> = ({ className }) => {
   return (
-    <ExpandableSection sectionName="SKILLS">
+    <ExpandableSection sectionName="SKILLS" className={className}>
       <p className={`${roboto.className}`}>
         Although I&apos;m curious to learn about new technologies, these are the
         tools I&apos;m experienced with

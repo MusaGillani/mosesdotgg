@@ -1,9 +1,9 @@
 import ExpandableSection from "./expandableSection";
 import ProjectCard from "./projectCard";
 
-const Projects: React.FC = () => {
+const Projects: React.FC<{ className?: string }> = ({ className }) => {
   return (
-    <ExpandableSection sectionName="PROJECTS">
+    <ExpandableSection sectionName="PROJECTS" className={className}>
       <ProjectCard
         title="COMPLAINTRONIX"
         type="Semester Project"

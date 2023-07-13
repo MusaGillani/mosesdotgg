@@ -3,7 +3,7 @@ export const experiences = [
     company: "Devsinc",
     position: "Associate Software Engineer",
     location: "Islamabad, Pakistan",
-    tenure: "Since Aug, 2022",
+    tenure: "Aug, 2022 - Jul, 2023",
   },
   {
     company: "Fenix Networks",

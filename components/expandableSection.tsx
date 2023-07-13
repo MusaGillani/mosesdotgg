@@ -1,9 +1,10 @@
 "use client";
 import { MdExpandLess, MdExpandMore } from "react-icons/md";
-import { PropsWithChildren, useState } from "react";
+import { PropsWithChildren, useEffect, useState } from "react";
 
 import { sigmar } from "@/fonts";
 import useComponentSize from "@/hooks/useComponentSize";
+import useWindowSize from "@/hooks/useWindowSize";
 
 type Props = PropsWithChildren<{ sectionName: string; className?: string }>;
 
@@ -12,8 +13,13 @@ const ExpandableSection: React.FC<Props> = ({
   children,
   className,
 }) => {
-  const [isExpanded, setIsExpanded] = useState(true);
+  const { width } = useWindowSize();
+  const [isExpanded, setIsExpanded] = useState<boolean>(false);
   const [ref, contentMaxHeight] = useComponentSize();
+
+  useEffect(() => {
+    setIsExpanded(width ? width >= 768 : false);
+  }, [width]);
 
   return (
     <div className={className}>

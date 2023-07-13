@@ -7,6 +7,8 @@ import { cn } from "@/lib/utils";
 import { sigmar, roboto } from "@/fonts";
 import { AnimatedGithub, AnimatedTwitter } from "@/icons";
 
+const company = null;
+
 const ProfileBio: React.FC<{ className?: string }> = ({ className }) => {
   const [animate, setAnimate] = useState(false);
 
@@ -26,16 +28,18 @@ const ProfileBio: React.FC<{ className?: string }> = ({ className }) => {
         Hi, I&apos;m Musa 👋
       </h1>
       <p className="text-4xl">Full stack developer, software engineer</p>
-      <p className="text-3xl">
-        Currently working{" "}
-        <a
-          href="https://devsinc.com/"
-          className="font-bold text-discord-purple"
-          target="_blank"
-        >
-          @Devsinc
-        </a>
-      </p>
+      {company && (
+        <p className="text-3xl">
+          Currently working{" "}
+          <a
+            href="https://devsinc.com/"
+            className="font-bold text-discord-purple"
+            target="_blank"
+          >
+            @{company}
+          </a>
+        </p>
+      )}
       <div className="my-2 flex text-4xl">
         <a href="https://github.com/MusaGillani" target="_blank">
           <AnimatedGithub />

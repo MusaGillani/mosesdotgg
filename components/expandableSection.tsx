@@ -34,6 +34,7 @@ const ExpandableSection: React.FC<Props> = ({
         >
           {isExpanded ? <MdExpandLess /> : <MdExpandMore />}
         </button>
+        <span className="sr-only">Click to Expand</span>
       </div>
       <div
         className={`overflow-hidden transition-all duration-300 ease-in-out`}

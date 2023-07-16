@@ -1,5 +1,6 @@
 "use client";
-import { Font, Document, Page, Text, View, Link } from "@react-pdf/renderer";
+import { Font, PDFViewer } from "@react-pdf/renderer";
+import { Document, Page, Text, View, Link } from "@react-pdf/renderer";
 import { createTw } from "react-pdf-tailwind";
 
 import { achievements } from "@/constants/achievements";
@@ -49,8 +50,8 @@ const tw = createTw({
   },
 });
 
-const MyPdf: React.FC = () => {
-  return (
+const ViewPDf = () => (
+  <PDFViewer className="m-auto h-screen w-screen">
     <Document
       author="Musa Gillni"
       creator="moses.gg"
@@ -175,7 +176,7 @@ const MyPdf: React.FC = () => {
         </View>
       </Page>
     </Document>
-  );
-};
+  </PDFViewer>
+);
 
-export default MyPdf;
+export default ViewPDf;

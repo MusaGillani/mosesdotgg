@@ -1,18 +1,52 @@
+"use client";
 import { VscGithubInverted } from "react-icons/vsc";
 import { BsTwitter } from "react-icons/bs";
+import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
 
-export const AnimatedGithub: React.FC<{ className?: string }> = ({
+const AnimatedLinkIcon: React.FC<
+  React.PropsWithChildren<{ className?: string; href: string }>
+> = ({ children, className, href }) => {
+  return (
+    <motion.a
+      href={href}
+      target="_blank"
+      whileHover="hover"
+      initial="initial"
+      className={cn("m-2", className)}
+    >
+      <motion.div
+        variants={{
+          initial: {
+            rotate: 0,
+            scale: 1,
+          },
+          hover: {
+            rotate: 10,
+            scale: 1.2,
+          },
+        }}
+      >
+        {children}
+      </motion.div>
+    </motion.a>
+  );
+};
+
+export const AnimatedGithub: React.FC<{ href: string; className?: string }> = ({
   className,
+  href,
 }) => (
-  <VscGithubInverted
-    className={`m-2 ml-0 transition delay-150 ease-in-out hover:rotate-12 hover:scale-150 ${className}`}
-  />
+  <AnimatedLinkIcon href={href} className={className}>
+    <VscGithubInverted />
+  </AnimatedLinkIcon>
 );
 
-export const AnimatedTwitter: React.FC<{ className?: string }> = ({
-  className,
-}) => (
-  <BsTwitter
-    className={`m-2 transition delay-150 ease-in-out hover:rotate-12 hover:scale-150 ${className}`}
-  />
+export const AnimatedTwitter: React.FC<{
+  href: string;
+  className?: string;
+}> = ({ className, href }) => (
+  <AnimatedLinkIcon href={href} className={className}>
+    <BsTwitter />
+  </AnimatedLinkIcon>
 );

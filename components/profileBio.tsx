@@ -41,12 +41,8 @@ const ProfileBio: React.FC<{ className?: string }> = ({ className }) => {
         </p>
       )}
       <div className="my-2 flex text-4xl">
-        <a href="https://github.com/MusaGillani" target="_blank">
-          <AnimatedGithub />
-        </a>
-        <a href="https://twitter.com/mosesdotgg" target="_blank">
-          <AnimatedTwitter />
-        </a>
+        <AnimatedGithub href="https://github.com/MusaGillani" />
+        <AnimatedTwitter href="https://twitter.com/mosesdotgg" />
       </div>
     </div>
   );

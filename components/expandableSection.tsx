@@ -14,7 +14,7 @@ const ExpandableSection: React.FC<Props> = ({
   className,
 }) => {
   const { width } = useWindowSize();
-  const [isExpanded, setIsExpanded] = useState<boolean>(false);
+  const [isExpanded, setIsExpanded] = useState<boolean>(true);
   const [ref, contentMaxHeight] = useComponentSize();
 
   useEffect(() => {
@@ -23,19 +23,22 @@ const ExpandableSection: React.FC<Props> = ({
 
   return (
     <div className={className}>
-      <div className="mt-10 flex w-full items-center justify-between text-3xl">
-        <h1 className={`${sigmar.className}`}>{sectionName}</h1>
-        <button
-          className="rounded-full border-2 border-slate-300"
-          onClick={() => {
-            if (isExpanded) ref.current!.scrollIntoView();
-            setIsExpanded((prev) => !prev);
-          }}
-        >
-          {isExpanded ? <MdExpandLess /> : <MdExpandMore />}
-        </button>
-        <span className="sr-only">Click to Expand</span>
-      </div>
+      {/* @ts-expect-error */}
+      {width < 768 && (
+        <div className="mt-10 flex w-full items-center justify-between text-3xl">
+          <h1 className={`${sigmar.className}`}>{sectionName}</h1>
+          <button
+            className="rounded-full border-2 border-slate-300"
+            onClick={() => {
+              if (isExpanded) ref.current!.scrollIntoView();
+              setIsExpanded((prev) => !prev);
+            }}
+          >
+            {isExpanded ? <MdExpandLess /> : <MdExpandMore />}
+          </button>
+          <span className="sr-only">Click to Expand</span>
+        </div>
+      )}
       <div
         className={`overflow-hidden transition-all duration-300 ease-in-out`}
         style={{

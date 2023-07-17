@@ -1,6 +1,7 @@
 "use client";
 import { ChevronDown, FileText, Loader } from "lucide-react";
 import { ComponentPropsWithRef, ComponentType } from "react";
+import dynamic from "next/dynamic";
 import { useCopyToClipboard } from "usehooks-ts";
 import { usePDF } from "@react-pdf/renderer";
 
@@ -68,7 +69,12 @@ const PDFDownloadButton: React.FC = () => {
   );
 };
 
-export default PDFDownloadButton;
+const PDFDownloadButtonNoSSR = dynamic(
+  () => Promise.resolve(PDFDownloadButton),
+  { ssr: false }
+);
+
+export default PDFDownloadButtonNoSSR;
 
 const ListItems: React.FC<{
   Component: ComponentType<

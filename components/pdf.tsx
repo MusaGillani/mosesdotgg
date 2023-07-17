@@ -1,4 +1,3 @@
-"use client";
 import { Font, Document, Page, Text, View, Link } from "@react-pdf/renderer";
 import { createTw } from "react-pdf-tailwind";
 

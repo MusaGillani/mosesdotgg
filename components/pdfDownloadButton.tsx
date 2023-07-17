@@ -69,9 +69,17 @@ const PDFDownloadButton: React.FC = () => {
   );
 };
 
+const LoadingSkeleton: React.FC = () => {
+  return (
+    <div className="block rounded-lg bg-purple-200 p-4 dark:bg-teal-900">
+      <Loader className="mx-4 animate-spin" />
+    </div>
+  );
+};
+
 const PDFDownloadButtonNoSSR = dynamic(
   () => Promise.resolve(PDFDownloadButton),
-  { ssr: false }
+  { ssr: false, loading: LoadingSkeleton }
 );
 
 export default PDFDownloadButtonNoSSR;

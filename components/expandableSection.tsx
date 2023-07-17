@@ -5,10 +5,12 @@ import { PropsWithChildren, useEffect, useState } from "react";
 import { sigmar } from "@/fonts";
 import useComponentSize from "@/hooks/useComponentSize";
 import useWindowSize from "@/hooks/useWindowSize";
+import dynamic from "next/dynamic";
+import { Skeleton } from "./ui/skeleton";
 
 type Props = PropsWithChildren<{ sectionName: string; className?: string }>;
 
-const ExpandableSection: React.FC<Props> = ({
+const ExpandableSectionComponent: React.FC<Props> = ({
   sectionName,
   children,
   className,
@@ -42,7 +44,7 @@ const ExpandableSection: React.FC<Props> = ({
       <div
         className={`overflow-hidden transition-all duration-300 ease-in-out`}
         style={{
-          height: isExpanded ? contentMaxHeight : 0,
+          height: isExpanded ? contentMaxHeight : undefined,
         }}
       >
         {isExpanded && (
@@ -54,5 +56,16 @@ const ExpandableSection: React.FC<Props> = ({
     </div>
   );
 };
+
+const LoadingSkeleton: React.FC = () => {
+  return <Skeleton className="h-4 w-3/4" />;
+};
+
+const ExpandableSection = dynamic(
+  () => Promise.resolve(ExpandableSectionComponent),
+  {
+    loading: LoadingSkeleton,
+  }
+);
 
 export default ExpandableSection;

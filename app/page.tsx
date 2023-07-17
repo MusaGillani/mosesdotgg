@@ -10,7 +10,9 @@ export default function Home() {
   return (
     <>
       <Banner />
-      <main className={`flex flex-col px-10 py-10 lg:px-48`}>
+      <main
+        className={`mx-auto flex flex-col px-10 py-10 lg:px-40 xl:w-2/4 xl:px-0`}
+      >
         <NavBar className="order-1" />
         <ProfileBio className="order-2" />
         <Description className="order-3" />

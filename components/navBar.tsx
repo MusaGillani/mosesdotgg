@@ -1,6 +1,7 @@
 import { sigmar } from "@/fonts";
 import { cn } from "@/lib/utils";
 import ThemeSwitch from "@/components/themeSwitch";
+import PDFDownloadButton from "./pdfDownloadButton";
 
 const NavBar: React.FC<{ className?: string }> = ({ className }) => {
   return (
@@ -13,7 +14,10 @@ const NavBar: React.FC<{ className?: string }> = ({ className }) => {
       <p className={`text-3xl text-black dark:text-white ${sigmar.className}`}>
         MOSES.GG
       </p>
-      <ThemeSwitch />
+      <div className="flex items-center gap-x-3">
+        <ThemeSwitch />
+        <PDFDownloadButton />
+      </div>
     </nav>
   );
 };

@@ -1,8 +1,7 @@
-import Image from "next/image";
-
 import complaintronix from "@/public/complaintronix.png";
 import { AnimatedGithub } from "@/icons";
 import { rubik } from "@/fonts";
+import ProjectImage from "./projectImage";
 
 type Props = {
   title: string;
@@ -22,12 +21,10 @@ const ProjectCard: React.FC<Props> = ({
   return (
     <div className="relative my-5 flex w-full rounded-lg dark:border-4 dark:border-slate-500 md:static">
       <div className="absolute h-full w-full rounded-lg bg-black p-5 opacity-95 md:static md:h-1/6  md:w-2/3 md:bg-inherit md:opacity-100">
-        <Image
-          src={complaintronix}
-          alt="complaintronix logo"
-          className="m-auto h-72 w-72 rounded-lg"
-        />
-        <p className="text-center  dark:text-gray-400">{title}</p>
+        <ProjectImage img={complaintronix} />
+        <p className={`text-center  dark:text-gray-400 ${rubik.className}`}>
+          {title}
+        </p>
       </div>
       <div className="z-10 w-full md:w-1/3 md:text-right">
         <p

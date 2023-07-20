@@ -3,9 +3,7 @@ import { roboto } from "@/fonts";
 
 const Description: React.FC<{ className?: string }> = ({ className }) => {
   return (
-    <div
-      className={cn("mt-10 text-justify text-2xl", roboto.className, className)}
-    >
+    <div className={cn("mt-10 text-3xl", roboto.className, className)}>
       <p>
         I&apos;m an associate software engineer at Devsinc, graduated with a
         Bachelor&apos;s in Computer Engineering from GIK
@@ -19,7 +17,7 @@ const Description: React.FC<{ className?: string }> = ({ className }) => {
       <p>
         Currently working with{" "}
         <a
-          href="https://nestjs.org"
+          href="https://nextjs.org"
           className="rounded-3xl text-center font-bold text-discord-purple transition ease-in-out dark:text-white"
           target="_blank"
         >

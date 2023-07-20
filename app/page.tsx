@@ -12,17 +12,17 @@ export default function Home() {
     <>
       <Banner />
       <main className={`flex flex-col px-10 py-10`}>
-        <NavBar className="order-1 mx-auto lg:w-[40vw]" />
-        <ProfileBio className="order-2 mx-auto mt-44 lg:w-[40vw]" />
-        <Description className="order-3 mx-auto lg:w-[40vw]" />
-        <AnimatedSection className="order-5 mx-auto md:order-4 lg:w-[40vw]">
+        <NavBar className="order-1 mx-auto lg:w-[30vw]" />
+        <ProfileBio className="order-2 mx-auto mt-44 lg:w-[30vw]" />
+        <Description className="order-3 mx-auto lg:w-[30vw]" />
+        <AnimatedSection className="order-5 mx-auto md:order-4 lg:w-[30vw]">
           <Skills />
         </AnimatedSection>
-        <AnimatedSection className="order-4 mx-auto md:order-5 lg:w-[40vw]">
+        <AnimatedSection className="order-4 mx-auto md:order-5 lg:w-[30vw]">
           <Experience />
         </AnimatedSection>
         <AnimatedSection className="order-6 mx-auto">
-          <Projects className=" lg:w-[50vw]" />
+          <Projects className=" lg:w-[40vw]" />
         </AnimatedSection>
       </main>
     </>

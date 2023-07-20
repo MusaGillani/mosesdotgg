@@ -25,7 +25,7 @@ const ExpandableSectionComponent: React.FC<Props> = ({
 
   return (
     <>
-      <div className="mt-10 flex w-[calc(100vw_-_5rem)] items-center justify-between text-3xl lg:mx-auto lg:w-[40vw]">
+      <div className="mt-10 flex w-[calc(100vw_-_5rem)] items-center justify-between text-3xl lg:mx-auto lg:w-[30vw]">
         <h1 className={`${sigmar.className}`}>{sectionName}</h1>
         <button
           className="rounded-full border-2 border-slate-300 md:hidden"
@@ -38,7 +38,7 @@ const ExpandableSectionComponent: React.FC<Props> = ({
         <span className="sr-only">Click to Expand</span>
       </div>
       <div
-        className={`overflow-y-hidden overflow-x-visible transition-all duration-300 ease-in-out`}
+        className={`overflow-y-hidden overflow-x-visible transition-all duration-300 ease-in-out scrollbar-hide`}
         style={{
           height: isExpanded ? height + 20 : undefined,
         }}

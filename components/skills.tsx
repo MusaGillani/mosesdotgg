@@ -11,7 +11,7 @@ const Skills: React.FC<{ className?: string }> = ({ className }) => {
         Although I&apos;m curious to learn about new technologies, these are the
         tools I&apos;m experienced with
       </p>
-      <div className="mx-auto my-10 grid w-4/5 grid-cols-1 place-items-center gap-y-8 sm:grid-cols-2 md:w-full md:grid-cols-6">
+      <div className="mx-auto my-10 grid grid-cols-1 place-items-center gap-y-8 sm:grid-cols-2 md:w-full md:grid-cols-6">
         {skills.Frameworks_Technologies.map(({ icon, title, href }) => (
           <Fragment key={title}>
             <Card title={title} icon={icon} href={href} />

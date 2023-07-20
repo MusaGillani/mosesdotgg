@@ -3,10 +3,10 @@ import { MdExpandLess, MdExpandMore } from "react-icons/md";
 import { PropsWithChildren, useEffect, useState } from "react";
 
 import { sigmar } from "@/fonts";
-import useComponentSize from "@/hooks/useComponentSize";
 import useWindowSize from "@/hooks/useWindowSize";
 import dynamic from "next/dynamic";
 import { Skeleton } from "./ui/skeleton";
+import { useElementSize } from "usehooks-ts";
 
 type Props = PropsWithChildren<{ sectionName: string; className?: string }>;
 
@@ -17,43 +17,39 @@ const ExpandableSectionComponent: React.FC<Props> = ({
 }) => {
   const { width } = useWindowSize();
   const [isExpanded, setIsExpanded] = useState<boolean>(true);
-  const [ref, contentMaxHeight] = useComponentSize();
+  const [squareRef, { height }] = useElementSize();
 
   useEffect(() => {
     setIsExpanded(width ? width >= 768 : false);
   }, [width]);
 
   return (
-    <div className={className}>
-      {/* @ts-expect-error */}
-      {width < 768 && (
-        <div className="mt-10 flex w-full items-center justify-between text-3xl">
-          <h1 className={`${sigmar.className}`}>{sectionName}</h1>
-          <button
-            className="rounded-full border-2 border-slate-300"
-            onClick={() => {
-              if (isExpanded) ref.current!.scrollIntoView();
-              setIsExpanded((prev) => !prev);
-            }}
-          >
-            {isExpanded ? <MdExpandLess /> : <MdExpandMore />}
-          </button>
-          <span className="sr-only">Click to Expand</span>
-        </div>
-      )}
+    <>
+      <div className="mt-10 flex w-[calc(100vw_-_5rem)] items-center justify-between text-3xl lg:mx-auto lg:w-[40vw]">
+        <h1 className={`${sigmar.className}`}>{sectionName}</h1>
+        <button
+          className="rounded-full border-2 border-slate-300 md:hidden"
+          onClick={() => {
+            setIsExpanded((prev) => !prev);
+          }}
+        >
+          {isExpanded ? <MdExpandLess /> : <MdExpandMore />}
+        </button>
+        <span className="sr-only">Click to Expand</span>
+      </div>
       <div
-        className={`overflow-hidden transition-all duration-300 ease-in-out`}
+        className={`overflow-y-hidden overflow-x-visible transition-all duration-300 ease-in-out`}
         style={{
-          height: isExpanded ? contentMaxHeight : undefined,
+          height: isExpanded ? height + 20 : undefined,
         }}
       >
         {isExpanded && (
-          <div ref={ref} className="py-5">
+          <div ref={squareRef} className={className}>
             {children}
           </div>
         )}
       </div>
-    </div>
+    </>
   );
 };
 

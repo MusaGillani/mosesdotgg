@@ -48,12 +48,7 @@ const ProjectCard: React.FC<Props> = ({
           >
             {technologies}
           </p>
-          <div className="m-5 text-3xl">
-            <AnimatedGithub
-              href={github}
-              className="text-white dark:text-white md:text-black"
-            />
-          </div>
+          <AnimatedGithub href={github} className="inline-block text-3xl" />
         </div>
       </div>
     </div>

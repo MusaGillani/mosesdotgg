@@ -23,10 +23,14 @@ export const skills = {
       href: "https://www.typescriptlang.org/",
     },
     { title: "Prisma", icon: <SiPrisma />, href: "https://www.prisma.io/" },
-    { title: "React", icon: <FaReact />, href: "https://react.dev/" },
-    { title: "Next JS", icon: <TbBrandNextjs />, href: "https://nextjs.org/" },
-    { title: "Node JS", icon: <IoLogoNodejs />, href: "https://nodejs.org/en" },
-    { title: "Express", icon: <SiExpress />, href: "https://expressjs.com/" },
+    { title: "React,js", icon: <FaReact />, href: "https://react.dev/" },
+    { title: "Next.js", icon: <TbBrandNextjs />, href: "https://nextjs.org/" },
+    { title: "Node.js", icon: <IoLogoNodejs />, href: "https://nodejs.org/en" },
+    {
+      title: "Express.js",
+      icon: <SiExpress />,
+      href: "https://expressjs.com/",
+    },
     {
       title: "PostgreSQL",
       icon: <SiPostgresql />,

@@ -1,5 +1,12 @@
 export const projects = [
   {
+    name: "R-APP",
+    type: "Devsinc Proprietary Software",
+    tech: "Next.js, TailwindCSS, Seqeulize.js, PostgreSQL",
+    github: undefined,
+    desc: "An application tailored for Project Managers and Team Leads, empowering them to efficiently oversee their employees' performance, conduct reviews, and facilitate their professional growth.",
+  },
+  {
     name: "GIKI OBE ",
     type: "Final Year Project",
     tech: "NodeJs, ReactJs, MySQL, Github Actions",

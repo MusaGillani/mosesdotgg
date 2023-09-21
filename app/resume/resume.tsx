@@ -11,7 +11,7 @@ import { forwardRef } from "react";
 
 const Resume = forwardRef<HTMLDivElement>((_, ref) => {
   return (
-    <div className="mx-auto h-[297mm] w-[210mm] border bg-white" ref={ref}>
+    <div className="mx-auto h-[297mm] w-[210mm] border " ref={ref}>
       <div className="flex h-full gap-4 bg-[#EFEFEF] px-10 py-[20px] text-black">
         {/* left side */}
         <div className={"w-1/3 "}>

@@ -3,7 +3,6 @@ import { ChevronDown, FileText, Loader } from "lucide-react";
 import { ComponentPropsWithRef, ComponentType } from "react";
 import dynamic from "next/dynamic";
 import { useCopyToClipboard } from "usehooks-ts";
-import { usePDF } from "@react-pdf/renderer";
 
 import {
   ContextMenu,
@@ -26,10 +25,9 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 
-import MyPdf from "./pdf";
+import Link from "next/link";
 
 const PDFDownloadButton: React.FC = () => {
-  const [instance] = usePDF({ document: <MyPdf /> });
   return (
     <ContextMenu>
       <ContextMenuTrigger>
@@ -39,14 +37,10 @@ const PDFDownloadButton: React.FC = () => {
               <Tooltip>
                 <TooltipTrigger>
                   <div className="block rounded-lg bg-purple-200 p-4 dark:bg-teal-900">
-                    {instance.loading ? (
-                      <Loader className="animate-spin" />
-                    ) : (
-                      <div className="flex gap-x-3">
-                        <FileText />
-                        <ChevronDown />
-                      </div>
-                    )}
+                    <div className="flex gap-x-3">
+                      <FileText />
+                      <ChevronDown />
+                    </div>
                   </div>
                 </TooltipTrigger>
                 <TooltipContent>
@@ -58,12 +52,12 @@ const PDFDownloadButton: React.FC = () => {
           <DropdownMenuContent>
             <DropdownMenuLabel>Options</DropdownMenuLabel>
             <DropdownMenuSeparator />
-            <ListItems Component={DropdownMenuItem} instance={instance} />
+            <ListItems Component={DropdownMenuItem} />
           </DropdownMenuContent>
         </DropdownMenu>
       </ContextMenuTrigger>
       <ContextMenuContent>
-        <ListItems Component={ContextMenuItem} instance={instance} />
+        <ListItems Component={ContextMenuItem} />
       </ContextMenuContent>
     </ContextMenu>
   );
@@ -88,21 +82,16 @@ const ListItems: React.FC<{
   Component: ComponentType<
     ComponentPropsWithRef<typeof DropdownMenuItem | typeof ContextMenuItem>
   >;
-  instance: ReturnType<typeof usePDF>[0];
-}> = ({ Component, instance }) => {
+}> = ({ Component }) => {
   const [, copy] = useCopyToClipboard();
   return (
     <>
       <Component onClick={() => copy("musagillaniwork@gmail.com")}>
         Copy Email
       </Component>
-      {!(instance.loading || instance.error) && (
-        <Component>
-          <a href={instance.url!} download="musagillani-CV.pdf">
-            Download Resume
-          </a>
-        </Component>
-      )}
+      <Component>
+        <Link href={"/resume"}>Download Resume</Link>
+      </Component>
     </>
   );
 };

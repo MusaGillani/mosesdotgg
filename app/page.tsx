@@ -16,8 +16,8 @@ export default function Home() {
         <NavBar className="order-1" />
         <ProfileBio className="order-2" />
         <Description className="order-3" />
-        <Skills className="order-5 md:order-4" />
-        <Experience className="order-4 md:order-5" />
+        <Experience className="order-4" />
+        <Skills className="order-5" />
         <Projects className="order-6" />
       </main>
     </>

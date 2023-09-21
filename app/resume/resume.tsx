@@ -7,16 +7,17 @@ import { Building2 } from "lucide-react";
 import { education } from "@/constants/education";
 import { skills } from "@/constants/skills";
 import { achievements } from "@/constants/achievements";
+import { forwardRef } from "react";
 
-const debugClass = "border-2 border-red-400 border-dashed";
-function Resume() {
+const Resume = forwardRef<HTMLDivElement>((_, ref) => {
   return (
-    <div className="mx-auto h-[297mm] w-[210mm] border bg-white">
+    <div className="mx-auto h-[297mm] w-[210mm] border bg-white" ref={ref}>
       <div className="flex h-full gap-4 bg-[#EFEFEF] px-10 py-[20px] text-black">
         {/* left side */}
         <div className={"w-1/3 "}>
           <div className="flex flex-col items-center gap-2 rounded-2xl bg-black py-10">
-            <Image
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
               src="https://avatars.githubusercontent.com/u/62158726?v=4"
               alt="profile image"
               width={150}
@@ -61,10 +62,7 @@ function Resume() {
             {experiences.map(({ company, description, position, tenure }) => (
               <div key={company} className="my-2">
                 <div className="flex items-center justify-between gap-0.5">
-                  <div className="flex gap-0.5">
-                    <Building2 size={18} />
-                    <Text type={"primary"}>{company}</Text>
-                  </div>
+                  <Text type={"primary"}>{company}</Text>
                   <Text type={"ternary"}>({tenure})</Text>
                 </div>
                 <Text type={"primary"} size={"sm"}>
@@ -130,6 +128,8 @@ function Resume() {
       </div>
     </div>
   );
-}
+});
+
+Resume.displayName = "Resume";
 
 export default Resume;

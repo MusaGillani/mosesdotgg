@@ -1,7 +1,0 @@
-.a4 {
-  width: 210mm; /* Width of A4 paper */
-  height: 297mm; /* Height of A4 paper */
-  margin: 0 auto; /* Center the container horizontally */
-  background-color: white; /* Optional: Set a white background */
-  border: 1px solid #000; /* Optional: Add a border to visualize the A4 size */
-}

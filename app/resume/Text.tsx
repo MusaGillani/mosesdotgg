@@ -7,7 +7,7 @@ const textVariants = cva(roboto.className, {
   variants: {
     type: {
       primary: "font-extrabold",
-      secondary: "",
+      secondary: "text-slate-700",
       ternary: "",
     },
   },

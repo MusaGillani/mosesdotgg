@@ -7,8 +7,10 @@ const Card: React.FC<
   }>
 > = ({ children, title }) => {
   return (
-    <div className="rounded-xl bg-white p-4">
-      <Text type={"primary"}>{title}</Text>
+    <div className="rounded-xl bg-white px-4 py-2.5">
+      <Text type={"primary"} size="xl">
+        {title}
+      </Text>
       {children}
     </div>
   );

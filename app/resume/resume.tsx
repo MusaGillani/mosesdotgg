@@ -2,16 +2,19 @@ import Image from "next/image";
 import Text from "./Text";
 import Card from "./Card";
 import { experiences } from "@/constants/experiences";
+import { projects } from "@/constants/projects";
 import { Building2 } from "lucide-react";
+import { education } from "@/constants/education";
+import { skills } from "@/constants/skills";
+import { achievements } from "@/constants/achievements";
 
 const debugClass = "border-2 border-red-400 border-dashed";
 function Resume() {
   return (
     <div className="mx-auto h-[297mm] w-[210mm] border bg-white">
-      {/*main content */}
       <div className="flex h-full gap-4 bg-[#EFEFEF] px-10 py-[20px] text-black">
+        {/* left side */}
         <div className={"w-1/3 "}>
-          {/* image card */}
           <div className="flex flex-col items-center gap-2 rounded-2xl bg-black py-10">
             <Image
               src="https://avatars.githubusercontent.com/u/62158726?v=4"
@@ -24,7 +27,6 @@ function Resume() {
             <p className="text-2xl font-bold text-white">Syed Musa Gillani</p>
             <p className="text-md text-white">Fullstack Engineer</p>
           </div>
-          {/* contact details  */}
           <div className="px-2 py-4">
             <Text type={"primary"}>Contact Details</Text>
             <div className="py-0.5" />
@@ -37,77 +39,92 @@ function Resume() {
             <Text type={"primary"}>Email: </Text>
             <Text type={"secondary"}>musagillaniwork@gmail.com</Text>
           </div>
-          {/* achievements */}
           <div className="px-2 py-4">
             <Text type={"primary"}>Achievements</Text>
-            <Text type={"secondary"}>Achievements 1</Text>
-            <Text type={"secondary"}>Achievements 2</Text>
-            <Text type={"secondary"}>Achievements 3</Text>
+            {achievements.map((a) => (
+              <Text type={"secondary"} key={a}>
+                &bull; {a}
+              </Text>
+            ))}
           </div>
-          {/* hobbies */}
           <div className="px-2 py-4">
             <Text type={"primary"}>Hobbies</Text>
-            <Text type={"secondary"}>Gaming</Text>
-            <Text type={"secondary"}>Music</Text>
-            <Text type={"secondary"}>Horse Riding</Text>
+            <Text type={"secondary"}>&bull; Gaming</Text>
+            <Text type={"secondary"}>&bull; Music</Text>
+            <Text type={"secondary"}>&bull; Horse Riding</Text>
           </div>
         </div>
 
         {/* right side - main section */}
-        <div className={"w-2/3 " + debugClass}>
-          <Card title="Profile">
-            <Text type={"secondary"}>
-              I&apos;m an associate software engineer at Devsinc, graduated with
-              a Bachelor&apos;s in Computer Engineering from GIK I love to learn
-              about software and always on the hunt for new Open Source Projects
-              to play around with. Eager to work in teams or solo. Currently
-              working with @Next JS and learning about React Server Components
-              and Island Architecture paradigm
-            </Text>
-          </Card>
-          <div className="py-2" />
+        <div className={"w-2/3 "}>
           <Card title="Experience">
             {experiences.map(({ company, description, position, tenure }) => (
-              <div key={company}>
-                <div className="flex gap-0.5">
-                  <Building2 />
-                  <Text type={"primary"} size={"sm"}>
-                    {company}
-                  </Text>
-                  <Text type={"secondary"}>({tenure})</Text>
+              <div key={company} className="my-2">
+                <div className="flex items-center justify-between gap-0.5">
+                  <div className="flex gap-0.5">
+                    <Building2 size={18} />
+                    <Text type={"primary"}>{company}</Text>
+                  </div>
+                  <Text type={"ternary"}>({tenure})</Text>
                 </div>
-                <Text type={"primary"} size={18}>
+                <Text type={"primary"} size={"sm"}>
                   {position}
                 </Text>
-                <Text type={"secondary"}>{description}</Text>
+                {description.map((desc, index) => (
+                  <Text type={"secondary"} size={"sm"} key={index}>
+                    &bull; {desc}
+                  </Text>
+                ))}
               </div>
             ))}
-            {/*
-              Name of Company - @{designation} (tenure)
-              description in bullet points
-            */}
           </Card>
           <div className="py-2" />
           <Card title="Projects">
-            {/*
-              Name of Project - @{type of project}
-              description 
-              Skills: [list of tech used]
-            */}
+            {projects.slice(0, 3).map(({ github, name, tech, type }) => (
+              <div key={name} className="my-1.5">
+                <div className="flex items-center justify-between gap-x-1">
+                  <Text type="primary">{name}</Text>
+                  <Text type="secondary">{type}</Text>
+                </div>
+                <div className="flex items-center justify-between gap-x-1">
+                  <Text type="primary">Skills: </Text>
+                  <Text type="secondary">{tech}</Text>
+                </div>
+                {github && (
+                  <div className="flex justify-between">
+                    <Text type="primary">Repo: </Text>
+                    <Text type="secondary">{github}</Text>
+                  </div>
+                )}
+              </div>
+            ))}
           </Card>
           <div className="py-2" />
           <Card title="Education">
-            {/* 
-              institute - (tenure)
-              name of degree
-            */}
+            {education.map(({ Degree, Institution, score, tenure }) => (
+              <div key={Institution} className="my-2">
+                <div className="flex items-center justify-between gap-x-1">
+                  <Text type="primary">
+                    {Institution} - {score}
+                  </Text>
+                  <Text type="secondary">({tenure})</Text>
+                </div>
+                <Text type="secondary">{Degree}</Text>
+              </div>
+            ))}
           </Card>
           <div className="py-2" />
           <Card title="Skills">
-            {/*
-              Frameworks/Technologies
-              Tools 
-            */}
+            {Object.entries(skills).map(([key, values], index) => (
+              <div key={key}>
+                <Text type="primary">
+                  {index === 0 ? key.split("_").join("/") : key}:
+                </Text>
+                <Text type="secondary" size="sm">
+                  {values.map(({ title }) => title).join(", ")}
+                </Text>
+              </div>
+            ))}
           </Card>
         </div>
       </div>

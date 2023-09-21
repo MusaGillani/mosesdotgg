@@ -1,6 +1,6 @@
 export const education = [
   {
-    Institution: "GIK Institute of Engineering Sciences and Technology",
+    Institution: "GIK University",
     Degree: "Bachelor of Science Computer Engineering",
     score: "3.05",
     tenure: "2018 - 2022",

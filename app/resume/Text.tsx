@@ -8,7 +8,7 @@ const textVariants = cva(roboto.className, {
     type: {
       primary: "font-extrabold",
       secondary: "text-slate-700",
-      ternary: "text-slate-300 text-sm",
+      ternary: "text-gray-400 text-sm",
     },
     size: {
       sm: "text-sm",

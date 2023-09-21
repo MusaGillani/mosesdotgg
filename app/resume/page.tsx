@@ -7,7 +7,7 @@ import { Loader } from "lucide-react";
 // render PDF and also show download button
 function Page() {
   const { toPDF, targetRef } = usePDF({
-    method: "open",
+    method: "save",
     filename: "musagillani-resume.pdf",
     page: { margin: 0.1 },
   });
@@ -16,7 +16,10 @@ function Page() {
 
   return (
     <div className="h-full min-h-screen max-w-full bg-white p-5">
-      <button onClick={downloadPdf} className="text-black">
+      <button
+        onClick={downloadPdf}
+        className="max-w-max cursor-pointer rounded border border-gray-300 bg-gray-100 p-2 text-center text-black transition-all duration-300 ease-in-out hover:bg-gray-300"
+      >
         Download Resume
       </button>
       <Resume ref={targetRef} />;

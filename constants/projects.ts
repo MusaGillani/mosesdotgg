@@ -1,5 +1,12 @@
 export const projects = [
   {
+    name: "Moses.gg",
+    type: "Personal Project",
+    tech: "Next.js 13, TailwindCSS, Radix UI, ShadCn UI",
+    github: "github.com/MusaGillani/mosesdotgg",
+    desc: "Personal Website served as Portfolio",
+  },
+  {
     name: "R-APP",
     type: "Devsinc Proprietary Software",
     tech: "Next.js, TailwindCSS, Seqeulize.js, PostgreSQL",

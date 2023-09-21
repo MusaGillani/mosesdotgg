@@ -48,7 +48,7 @@ export const skills = {
     },
     { title: "Postman", icon: <SiPostman />, href: "https://www.postman.com/" },
     {
-      title: "Linux, Mac OS",
+      title: "Linux, Bash, Zsh",
       icon: <DiLinux />,
       href: "https://www.linux.org/",
     },

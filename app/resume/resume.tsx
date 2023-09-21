@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Text from "./Text";
 import Card from "./Card";
+import { experiences } from "@/constants/experiences";
+import { Building2 } from "lucide-react";
 
 const debugClass = "border-2 border-red-400 border-dashed";
 function Resume() {
@@ -65,6 +67,21 @@ function Resume() {
           </Card>
           <div className="py-2" />
           <Card title="Experience">
+            {experiences.map(({ company, description, position, tenure }) => (
+              <div key={company}>
+                <div className="flex gap-0.5">
+                  <Building2 />
+                  <Text type={"primary"} size={"sm"}>
+                    {company}
+                  </Text>
+                  <Text type={"secondary"}>({tenure})</Text>
+                </div>
+                <Text type={"primary"} size={18}>
+                  {position}
+                </Text>
+                <Text type={"secondary"}>{description}</Text>
+              </div>
+            ))}
             {/*
               Name of Company - @{designation} (tenure)
               description in bullet points

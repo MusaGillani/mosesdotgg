@@ -8,7 +8,12 @@ const textVariants = cva(roboto.className, {
     type: {
       primary: "font-extrabold",
       secondary: "text-slate-700",
-      ternary: "",
+      ternary: "text-slate-300 text-sm",
+    },
+    size: {
+      sm: "text-sm",
+      lg: "text-lg",
+      xl: "text-xl",
     },
   },
 });
@@ -17,8 +22,12 @@ export interface TextProps
   extends React.ParamHTMLAttributes<HTMLParagraphElement>,
     VariantProps<typeof textVariants> {}
 
-const Text: React.FC<PropsWithChildren<TextProps>> = ({ children, type }) => {
-  return <p className={cn(textVariants({ type }))}>{children}</p>;
+const Text: React.FC<PropsWithChildren<TextProps>> = ({
+  children,
+  type,
+  size,
+}) => {
+  return <p className={cn(textVariants({ type, size }))}>{children}</p>;
 };
 
 export default Text;

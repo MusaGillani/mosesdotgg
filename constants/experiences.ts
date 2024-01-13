@@ -1,5 +1,15 @@
 export const experiences = [
   {
+    company: "Auxcube",
+    position: "Software Engineer",
+    location: "Remote",
+    tenure: "Dec, 2023 - present",
+    description: [
+      "Fullstack web based solutions using the bleeding edge versions of React.js, Next.js, Typescript",
+      "Provided recommendations for infrastructure design, participated in gathering business requirements and translating them into scalable code.",
+    ],
+  },
+  {
     company: "Devsinc",
     position: "Associate Software Engineer",
     location: "Islamabad, Pakistan",

@@ -59,22 +59,24 @@ const Resume = forwardRef<HTMLDivElement>((_, ref) => {
         {/* right side - main section */}
         <div className={"w-2/3 "}>
           <Card title="Experience">
-            {experiences.map(({ company, description, position, tenure }) => (
-              <div key={company} className="my-2">
-                <div className="flex items-center justify-between gap-0.5">
-                  <Text type={"primary"}>{company}</Text>
-                  <Text type={"ternary"}>({tenure})</Text>
-                </div>
-                <Text type={"primary"} size={"sm"}>
-                  {position}
-                </Text>
-                {description.map((desc, index) => (
-                  <Text type={"secondary"} size={"sm"} key={index}>
-                    &bull; {desc}
+            {experiences
+              .slice(0, 3)
+              .map(({ company, description, position, tenure }) => (
+                <div key={company} className="my-2">
+                  <div className="flex items-center justify-between gap-0.5">
+                    <Text type={"primary"}>{company}</Text>
+                    <Text type={"ternary"}>({tenure})</Text>
+                  </div>
+                  <Text type={"primary"} size={"sm"}>
+                    {position}
                   </Text>
-                ))}
-              </div>
-            ))}
+                  {description.map((desc, index) => (
+                    <Text type={"secondary"} size={"sm"} key={index}>
+                      &bull; {desc}
+                    </Text>
+                  ))}
+                </div>
+              ))}
           </Card>
           <div className="py-2" />
           <Card title="Projects">

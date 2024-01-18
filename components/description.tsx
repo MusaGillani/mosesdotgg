@@ -5,7 +5,7 @@ const Description: React.FC<{ className?: string }> = ({ className }) => {
   return (
     <div className={cn("mt-10 text-xl", roboto.className, className)}>
       <p>
-        I&apos;m an associate software engineer at Devsinc, graduated with a
+        I&apos;m a software engineer at Auxcube, graduated with a
         Bachelor&apos;s in Computer Engineering from GIK
       </p>
       <p>

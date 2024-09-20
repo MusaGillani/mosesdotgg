@@ -1,6 +1,6 @@
 "use client";
 import { ChevronDown, FileText, Loader } from "lucide-react";
-import { ComponentPropsWithRef, ComponentType } from "react";
+import { ComponentProps, ComponentType } from "react";
 import dynamic from "next/dynamic";
 import { useCopyToClipboard } from "usehooks-ts";
 
@@ -63,7 +63,7 @@ const PDFDownloadButton: React.FC = () => {
   );
 };
 
-const LoadingSkeleton: React.FC = () => {
+const LoadingSkeleton = () => {
   return (
     <div className="block rounded-lg bg-purple-200 p-4 dark:bg-teal-900">
       <Loader className="mx-4 animate-spin" />
@@ -80,7 +80,7 @@ export default PDFDownloadButtonNoSSR;
 
 const ListItems: React.FC<{
   Component: ComponentType<
-    ComponentPropsWithRef<typeof DropdownMenuItem | typeof ContextMenuItem>
+    ComponentProps<typeof DropdownMenuItem | typeof ContextMenuItem>
   >;
 }> = ({ Component }) => {
   const [, copy] = useCopyToClipboard();

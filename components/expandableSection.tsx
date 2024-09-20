@@ -59,7 +59,7 @@ const ExpandableSectionComponent: React.FC<Props> = ({
   );
 };
 
-const LoadingSkeleton: React.FC = () => {
+const LoadingSkeleton = () => {
   return <Skeleton className="h-4 w-3/4" />;
 };
 

@@ -6,6 +6,7 @@ import { Loader } from "lucide-react";
 
 // render PDF and also show download button
 function Page() {
+  // some way to render links in display mode and p tags in download mode
   const { toPDF, targetRef } = usePDF({
     method: "save",
     filename: "musagillani-resume.pdf",

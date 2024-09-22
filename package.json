@@ -6,9 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "add-comp": "npx shadcn@latest add",
+    "typecheck": "tsc -b --force"
   },
   "dependencies": {
+    "@radix-ui/react-accordion": "^1.2.0",
+    "@radix-ui/react-collapsible": "^1.1.0",
     "@radix-ui/react-context-menu": "^2.2.1",
     "@radix-ui/react-dropdown-menu": "^2.1.1",
     "@radix-ui/react-tooltip": "^1.1.2",
@@ -18,7 +22,7 @@
     "autoprefixer": "10.4.20",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    "eslint": "9.10.0",
+    "eslint": "8.39.0",
     "eslint-config-next": "14.2.13",
     "lucide-react": "^0.441.0",
     "next": "^14.2.13",

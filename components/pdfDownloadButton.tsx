@@ -36,7 +36,7 @@ const PDFDownloadButton: React.FC = () => {
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger>
-                  <div className="block rounded-lg bg-purple-200 p-4 dark:bg-teal-900">
+                  <div className="bg-discord-purple-lightened block rounded-lg p-4 dark:bg-teal-900">
                     <div className="flex gap-x-3">
                       <FileText />
                       <ChevronDown />
@@ -65,7 +65,7 @@ const PDFDownloadButton: React.FC = () => {
 
 const LoadingSkeleton = () => {
   return (
-    <div className="block rounded-lg bg-purple-200 p-4 dark:bg-teal-900">
+    <div className="bg-discord-purple-lightened block rounded-lg p-4 dark:bg-teal-900">
       <Loader className="mx-4 animate-spin" />
     </div>
   );
@@ -73,7 +73,7 @@ const LoadingSkeleton = () => {
 
 const PDFDownloadButtonNoSSR = dynamic(
   () => Promise.resolve(PDFDownloadButton),
-  { ssr: false, loading: LoadingSkeleton }
+  { ssr: false, loading: LoadingSkeleton },
 );
 
 export default PDFDownloadButtonNoSSR;

@@ -1,18 +1,31 @@
-import ExpandableSection from "./expandableSection";
+import Section from "./section";
 import ProjectCard from "./projectCard";
+import { projects } from "@/constants/projects";
+import { cn } from "@/lib/utils";
 
 const Projects: React.FC<{ className?: string }> = ({ className }) => {
   return (
-    <ExpandableSection sectionName="PROJECTS" className={className}>
-      <ProjectCard
-        title="COMPLAINTRONIX"
-        type="Semester Project"
-        description="A Mobile application to register and manage student complaints
-            related to their internet connections in GIKI hostels"
-        technologies="Flutter Express Firebase MySQL"
-        github="https://github.com/MusaGillani/complaintronix-flutter"
-      />
-    </ExpandableSection>
+    <Section
+      sectionName="PROJECTS"
+      className={cn(className)}
+      contentClassName={cn("horizontal-spacing", "xl:w-4/6")}
+    >
+      {projects.map(
+        ({ github, name, tech, type, link, desc, imageSrc }, index) => (
+          <ProjectCard
+            key={name}
+            title={name.toUpperCase()}
+            type={type}
+            description={desc}
+            technologies={tech}
+            github={github && `https://${github}`}
+            imageSrc={imageSrc}
+            link={link && `https://${link}`}
+            rightShift={(index + 1) % 2 === 0}
+          />
+        ),
+      )}
+    </Section>
   );
 };
 

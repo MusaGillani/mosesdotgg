@@ -13,7 +13,7 @@ const ProfileBio: React.FC<{ className?: string }> = ({ className }) => {
   const [animate, setAnimate] = useState(false);
 
   return (
-    <div className={cn("mt-10 font-normal", sigmar.className, className)}>
+    <div className={cn("mt-80 font-normal", sigmar.className, className)}>
       <Image
         src="https://avatars.githubusercontent.com/u/62158726?v=4"
         alt="profile image"

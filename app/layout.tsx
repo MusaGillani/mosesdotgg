@@ -20,8 +20,8 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "h-full min-h-screen bg-white dark:bg-black dark:text-white ",
-          roboto.className
+          "h-full min-h-screen bg-white dark:bg-black dark:text-white",
+          roboto.className,
         )}
       >
         <Providers>{children}</Providers>

@@ -6,6 +6,12 @@ import {
   SiPostman,
   SiPrisma,
   SiVercel,
+  SiNestjs,
+  SiVim,
+  SiNeovim,
+  SiZedindustries,
+  SiBun,
+  SiHasura,
 } from "react-icons/si";
 import { FaReact } from "react-icons/fa";
 import { TbBrandNextjs, TbBrandVscode } from "react-icons/tb";
@@ -22,36 +28,62 @@ export const skills = {
       icon: <SiTypescript />,
       href: "https://www.typescriptlang.org/",
     },
-    { title: "Prisma", icon: <SiPrisma />, href: "https://www.prisma.io/" },
-    { title: "React", icon: <FaReact />, href: "https://react.dev/" },
     { title: "Next JS", icon: <TbBrandNextjs />, href: "https://nextjs.org/" },
+    { title: "React JS", icon: <FaReact />, href: "https://react.dev/" },
+    {
+      title: "Tailwind CSS",
+      icon: <BiLogoTailwindCss />,
+      href: "https://tailwindcss.com/",
+    },
     { title: "Node JS", icon: <IoLogoNodejs />, href: "https://nodejs.org/en" },
-    { title: "Express", icon: <SiExpress />, href: "https://expressjs.com/" },
+    { title: "Bun", icon: <SiBun />, href: "https://bun.sh/" },
+    { title: "Nest JS", icon: <SiNestjs />, href: "https://nestjs.com/" },
+    {
+      title: "Express JS",
+      icon: <SiExpress />,
+      href: "https://expressjs.com/",
+    },
+    { title: "GraphQL", icon: <GrGraphQl />, href: "https://graphql.org/" },
+    {
+      title: "Hasura v2",
+      icon: <SiHasura />,
+      href: "https://hasura.io/docs/2.0/index/",
+    },
+
     {
       title: "PostgreSQL",
       icon: <SiPostgresql />,
       href: "https://www.postgresql.org/",
     },
     { title: "Flutter", icon: <RiFlutterFill />, href: "https://flutter.dev/" },
-    { title: "GraphQL", icon: <GrGraphQl />, href: "https://graphql.org/" },
-    {
-      title: "TailwindCSS",
-      icon: <BiLogoTailwindCss />,
-      href: "https://tailwindcss.com/",
-    },
   ],
   Tools: [
+    {
+      title: "Zed",
+      icon: <SiZedindustries />,
+      href: "https://zed.dev/",
+    },
+    {
+      title: "Vim",
+      icon: <SiVim />,
+      href: "https://www.vim.org/",
+    },
+    {
+      title: "Neovim",
+      icon: <SiNeovim />,
+      href: "https://neovim.io/",
+    },
     {
       title: "VS Code",
       icon: <TbBrandVscode />,
       href: "https://code.visualstudio.com/",
     },
-    { title: "Postman", icon: <SiPostman />, href: "https://www.postman.com/" },
     {
-      title: "Linux, Bash, Zsh",
+      title: "Linux, Bash, Zsh, Fish",
       icon: <DiLinux />,
       href: "https://www.linux.org/",
     },
+    { title: "Postman", icon: <SiPostman />, href: "https://www.postman.com/" },
     { title: "Vercel", icon: <SiVercel />, href: "https://vercel.com/" },
     { title: "Notion", icon: <SiNotion />, href: "https://www.notion.so/" },
   ],

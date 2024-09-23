@@ -10,16 +10,15 @@ export default function Home() {
   return (
     <>
       <Banner />
-      <main
-        className={`mx-auto flex flex-col px-10 py-10 lg:px-40 xl:w-2/4 xl:px-0`}
-      >
-        <NavBar className="order-1" />
-        <ProfileBio className="order-2" />
-        <Description className="order-3" />
-        <Experience className="order-4" />
-        <Skills className="order-5" />
-        <Projects className="order-6" />
+      <main className={`flex flex-col`}>
+        <NavBar className="horizontal-spacing" />
+        <ProfileBio className="horizontal-spacing" />
+        <Description className="horizontal-spacing" />
+        <Experience className="horizontal-spacing" />
+        <Skills className={"horizontal-spacing"} />
+        <Projects className="horizontal-spacing" />
       </main>
     </>
+    // TODO add a footer
   );
 }

@@ -2,9 +2,12 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Resume",
-  viewport: {
-    width: 1023,
-  },
+};
+
+import type { Viewport } from "next";
+
+export const viewport: Viewport = {
+  width: 1023,
 };
 
 function layout({ children }: { children: React.ReactNode }) {

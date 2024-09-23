@@ -1,10 +1,18 @@
+import complaintronix from "@/public/complaintronix.png";
 export const projects = [
+  {
+    name: "Porchpass",
+    type: "Client Project",
+    tech: "Next.js 14, ShadCn UI, Hasura GraphQL, NestJS",
+    link: "braustin.porchpass.com",
+    desc: "An application designed for new home owners to easily apply for and secure Manufactured Home Financing",
+  },
   {
     name: "Moses.gg",
     type: "Personal Project",
     tech: "Next.js 13, TailwindCSS, Radix UI, ShadCn UI",
     github: "github.com/MusaGillani/mosesdotgg",
-    desc: "Personal Website served as Portfolio",
+    desc: "Personal Website served as a Portfolio",
   },
   {
     name: "R-APP",
@@ -26,6 +34,7 @@ export const projects = [
     tech: "Flutter, NodeJs, MySQL, Firebase, Heroku",
     github: "github.com/MusaGillani/complaintronix-flutter",
     desc: "Developed an android application using flutter and firebase with a custom backend in Express JS and MySQL on Heroku for managing student complaints related to internet in GIKI. Firebase was used for Authentication",
+    imageSrc: complaintronix,
   },
   {
     name: "Flex Eater",

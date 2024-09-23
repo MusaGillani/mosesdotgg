@@ -7,8 +7,8 @@ const Banner: React.FC = () => {
   return (
     <div
       className={cn(
-        "text-md inline-flex w-full items-center justify-center bg-orange-600 px-3 text-white ",
-        sigmarOne.className
+        "text-md absolute z-30 inline-flex w-full items-center justify-center bg-orange-600 px-3 text-white",
+        sigmarOne.className,
       )}
     >
       <span className="text-outline m-2 font-medium tracking-widest">

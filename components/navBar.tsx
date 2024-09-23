@@ -17,7 +17,7 @@ const NavBar: React.FC<{ className?: string }> = ({ className }) => {
     >
       <div
         className={cn(
-          "flex w-full items-center justify-between",
+          "flex w-full items-center justify-between py-5",
           "!pt-14", // remove when banner is removed
           className,
         )}

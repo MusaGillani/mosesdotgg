@@ -10,6 +10,7 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 import { cn } from "@/lib/utils";
+import { useInView } from "react-intersection-observer";
 
 type Props = PropsWithChildren<{
   sectionName: string;
@@ -25,7 +26,13 @@ const Section: React.FC<Props> = ({
 }) => {
   const { width } = useWindowSize();
   const [isExpanded, setIsExpanded] = useState<boolean>(true);
-  const ref = useRef<HTMLDivElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    // threshold: 0.4,
+    rootMargin: "-200px 0px",
+  });
 
   useEffect(() => {
     // setIsExpanded(width ? width >= 768 : false);
@@ -33,7 +40,15 @@ const Section: React.FC<Props> = ({
 
   return (
     <>
-      <Collapsible open={isExpanded} onOpenChange={setIsExpanded}>
+      <Collapsible
+        open={isExpanded}
+        onOpenChange={setIsExpanded}
+        ref={ref}
+        className={cn(
+          "transition-opacity delay-150 duration-700 ease-in-out",
+          inView ? "opacity-1" : "opacity-0",
+        )}
+      >
         <div
           className={cn(
             "flex w-full items-center justify-between text-3xl",
@@ -46,7 +61,7 @@ const Section: React.FC<Props> = ({
               <button
                 className="rounded-full border-2 border-slate-300"
                 onClick={() => {
-                  if (isExpanded) ref.current!.scrollIntoView();
+                  if (isExpanded) scrollRef.current!.scrollIntoView();
                   setIsExpanded((prev) => !prev);
                 }}
               >
@@ -57,7 +72,10 @@ const Section: React.FC<Props> = ({
           </CollapsibleTrigger>
         </div>
         <CollapsibleContent>
-          <div ref={ref} className={cn("py-5", contentClassName ?? className)}>
+          <div
+            ref={scrollRef}
+            className={cn("py-5", contentClassName ?? className)}
+          >
             {children}
           </div>
         </CollapsibleContent>

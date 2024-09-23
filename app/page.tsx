@@ -20,5 +20,6 @@ export default function Home() {
         <Projects className="horizontal-spacing" />
       </main>
     </>
+    // TODO add a footer
   );
 }

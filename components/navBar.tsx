@@ -33,13 +33,13 @@ const NavBar: React.FC<{ className?: string }> = ({ className }) => {
   return (
     <nav
       className={cn(
-        "fixed z-20 w-full transition-[top] duration-300",
+        "fixed z-20 w-full bg-white opacity-75 transition-[top] duration-300 dark:bg-black",
         visible ? "top-0" : "-top-28",
       )}
     >
       <div
         className={cn(
-          "flex w-full items-center justify-between bg-white opacity-75 dark:bg-black",
+          "flex w-full items-center justify-between",
           "!pt-14", // remove when banner is removed
           className,
         )}

@@ -15,7 +15,7 @@ export default function Home() {
         <ProfileBio className="horizontal-spacing" />
         <Description className="horizontal-spacing" />
         <Experience className="horizontal-spacing" />
-        <Skills className={"mx-auto px-10 lg:px-40 xl:w-2/4 xl:px-0"} />
+        <Skills className={"horizontal-spacing"} />
         <Projects className="horizontal-spacing" />
       </main>
     </>

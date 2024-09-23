@@ -39,7 +39,7 @@ const ProjectCard: React.FC<Props> = ({
         )}
       >
         {imageSrc && (
-          <div className="shadow-custom w-72 rounded-lg md:h-auto">
+          <div className="w-72 rounded-lg md:h-auto">
             <Image
               src={imageSrc}
               alt="logo"

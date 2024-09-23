@@ -3,7 +3,7 @@ import { roboto } from "@/fonts";
 
 const Description: React.FC<{ className?: string }> = ({ className }) => {
   return (
-    <div className={cn("mt-10 text-xl", roboto.className, className)}>
+    <div className={cn("text-xl", roboto.className, className)}>
       <p>
         I&apos;m a software engineer at Auxcube, graduated with a
         Bachelor&apos;s in Computer Engineering from{" "}

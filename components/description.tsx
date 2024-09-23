@@ -9,7 +9,7 @@ const Description: React.FC<{ className?: string }> = ({ className }) => {
         Bachelor&apos;s in Computer Engineering from{" "}
         <a
           href="https://giki.edu.pk/"
-          className="font-bold text-discord-purple"
+          className="font-bold text-discord-purple dark:text-teal-900"
           target="_blank"
         >
           GIK

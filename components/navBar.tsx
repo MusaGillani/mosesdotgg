@@ -3,32 +3,10 @@ import { sigmar } from "@/fonts";
 import { cn } from "@/lib/utils";
 import ThemeSwitch from "@/components/themeSwitch";
 import PDFDownloadButton from "./pdfDownloadButton";
-import { useCallback, useEffect, useState } from "react";
-
-const SCROLL_DISTANCE = 20; // additional distance to travel in direction
+import { useVisibleOnUpScroll } from "@/hooks/useVisibleOnUpScroll";
 
 const NavBar: React.FC<{ className?: string }> = ({ className }) => {
-  const [visible, setVisible] = useState(true);
-  const [lastScrollYPos, setLastScrollYPos] = useState(window.scrollY);
-
-  const handler = useCallback(() => {
-    const currScrollYPos = window.scrollY;
-    // up scroll -> lastScrollYPos > currScrollYPos
-    if (lastScrollYPos > currScrollYPos + SCROLL_DISTANCE) {
-      setVisible(true);
-    }
-    // down scroll -> lastScrollYPos < currScrollYPos
-    if (currScrollYPos > lastScrollYPos + SCROLL_DISTANCE) {
-      setVisible(false);
-    }
-
-    setLastScrollYPos(currScrollYPos);
-  }, [lastScrollYPos]);
-
-  useEffect(() => {
-    window.addEventListener("scroll", handler);
-    () => window.removeEventListener("scroll", handler);
-  }, [handler]);
+  const visible = useVisibleOnUpScroll();
 
   return (
     <nav

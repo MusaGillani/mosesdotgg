@@ -7,6 +7,7 @@ import Projects from "@/components/projects";
 import Banner from "@/components/banner";
 
 export default function Home() {
+  // TODO: add intersection observer to show sections on scroll
   return (
     <>
       <Banner />

@@ -22,7 +22,7 @@ export const roboto = Roboto({
 });
 
 export const rubik = Rubik({
-  weight: ["400"],
+  weight: ["300", "400", "500", "700"],
   subsets: ["latin"],
   display: "swap",
   variable: "--font-rubik",

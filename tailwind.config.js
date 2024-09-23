@@ -16,6 +16,9 @@ module.exports = {
       },
     },
     extend: {
+      boxShadow: {
+        custom: "0 4px 20px rgba(0, 0, 0, 0.25)",
+      },
       colors: {
         "discord-purple": "#7289DA",
         "discord-purple-lightened": "#A5BCFF",

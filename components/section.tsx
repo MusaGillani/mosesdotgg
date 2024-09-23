@@ -9,10 +9,20 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
+import { cn } from "@/lib/utils";
 
-type Props = PropsWithChildren<{ sectionName: string; className?: string }>;
+type Props = PropsWithChildren<{
+  sectionName: string;
+  className?: string;
+  contentClassName?: string;
+}>;
 
-const Section: React.FC<Props> = ({ sectionName, children, className }) => {
+const Section: React.FC<Props> = ({
+  sectionName,
+  children,
+  className,
+  contentClassName,
+}) => {
   const { width } = useWindowSize();
   const [isExpanded, setIsExpanded] = useState<boolean>(true);
   const ref = useRef<HTMLDivElement>(null);
@@ -22,9 +32,14 @@ const Section: React.FC<Props> = ({ sectionName, children, className }) => {
   }, [width]);
 
   return (
-    <div className={className}>
+    <>
       <Collapsible open={isExpanded} onOpenChange={setIsExpanded}>
-        <div className="mt-10 flex w-full items-center justify-between text-3xl">
+        <div
+          className={cn(
+            "flex w-full items-center justify-between text-3xl",
+            className,
+          )}
+        >
           <h1 className={`${sigmar.className}`}>{sectionName}</h1>
           <CollapsibleTrigger asChild>
             <div className="md:hidden">
@@ -42,12 +57,12 @@ const Section: React.FC<Props> = ({ sectionName, children, className }) => {
           </CollapsibleTrigger>
         </div>
         <CollapsibleContent>
-          <div ref={ref} className="py-5">
+          <div ref={ref} className={cn("py-5", contentClassName ?? className)}>
             {children}
           </div>
         </CollapsibleContent>
       </Collapsible>
-    </div>
+    </>
   );
 };
 

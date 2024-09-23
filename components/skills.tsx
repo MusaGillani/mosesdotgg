@@ -11,6 +11,7 @@ const Skills: React.FC<{ className?: string }> = ({ className }) => {
         Although I&apos;m curious to learn about new technologies, these are the
         tools I&apos;m experienced with
       </p>
+      {/* // TODO: fix spacing in smaller screens */}
       <div className="my-5 grid grid-cols-1 place-items-center gap-y-8 sm:mx-auto sm:my-10 sm:w-4/5 sm:grid-cols-2 md:w-full md:grid-cols-6">
         {skills.Frameworks_Technologies.map(({ icon, title, href }) => (
           <Fragment key={title}>

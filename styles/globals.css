@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.horizontal-spacing {
+  @apply mx-auto px-10 py-10 lg:px-40 xl:w-2/4 xl:px-0;
+}

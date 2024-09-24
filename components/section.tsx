@@ -38,6 +38,8 @@ const Section: React.FC<Props> = ({
     // setIsExpanded(width ? width >= 768 : false);
   }, [width]);
 
+  const screenMd = width ? width >= 768 : false;
+
   return (
     <>
       <Collapsible
@@ -46,7 +48,7 @@ const Section: React.FC<Props> = ({
         ref={ref}
         className={cn(
           "transition-opacity delay-150 duration-700 ease-in-out",
-          inView ? "opacity-1" : "opacity-0",
+          screenMd ? (inView ? "opacity-100" : "opacity-0") : "opacity-100",
         )}
       >
         <div

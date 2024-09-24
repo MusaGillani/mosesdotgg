@@ -39,11 +39,11 @@ const ProjectCard: React.FC<Props> = ({
         )}
       >
         {imageSrc && (
-          <div className="w-72 rounded-lg md:h-auto">
+          <div className="flex w-72 items-center justify-center rounded-lg md:h-auto">
             <Image
               src={imageSrc}
               alt="logo"
-              className="object-scale-down opacity-40 md:opacity-100"
+              className="rounded-md object-scale-down opacity-40 md:opacity-100"
             />
           </div>
         )}
@@ -68,7 +68,7 @@ const ProjectCard: React.FC<Props> = ({
         >
           {type}
         </p>
-        <div className="md:shadow-custom w-full overflow-hidden rounded-lg bg-transparent p-6 dark:md:shadow-black">
+        <div className="w-full overflow-hidden rounded-lg bg-transparent p-6 md:shadow-custom dark:md:shadow-black">
           <p className="w-full dark:text-white md:text-black">{description}</p>
         </div>
         <div className="flex w-full items-center justify-between md:block">

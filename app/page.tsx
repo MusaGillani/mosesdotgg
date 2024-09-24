@@ -9,7 +9,6 @@ import Banner from "@/components/banner";
 export default function Home() {
   return (
     <>
-      <Banner />
       <main className={`flex flex-col`}>
         <NavBar className="horizontal-spacing" />
         <ProfileBio className="horizontal-spacing" />

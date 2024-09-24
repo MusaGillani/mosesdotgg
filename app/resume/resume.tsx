@@ -7,7 +7,11 @@ import { skills } from "@/constants/skills";
 import { achievements } from "@/constants/achievements";
 import { forwardRef } from "react";
 
-const Resume = forwardRef<HTMLDivElement>((_, ref) => {
+export interface ResumeProps {
+  mode: "render" | "pdf";
+}
+
+const Resume = forwardRef<HTMLDivElement, ResumeProps>(({ mode }, ref) => {
   return (
     <div className="mx-auto h-[297mm] w-[210mm] border" ref={ref}>
       <div className="flex h-full gap-4 bg-[#EFEFEF] px-10 py-[20px] text-black">
@@ -30,13 +34,27 @@ const Resume = forwardRef<HTMLDivElement>((_, ref) => {
             <Text type={"primary"}>Contact Details</Text>
             <div className="py-0.5" />
             <Text type={"primary"}>Phone: </Text>
-            <Text type={"secondary"}>+92 323 9810312</Text>
+            <Text as="link" href="tel:+923239810312" type={"secondary"}>
+              +92 323 9810312
+            </Text>
             <div className="py-0.5" />
             <Text type={"primary"}>Github: </Text>
-            <Text type={"secondary"}>github.com/MusaGillani</Text>
+            <Text
+              as="link"
+              href="https://www.github.com/MusaGillani"
+              type={"secondary"}
+            >
+              github.com/MusaGillani
+            </Text>
             <div className="py-0.5" />
             <Text type={"primary"}>Email: </Text>
-            <Text type={"secondary"}>musagillaniwork@gmail.com</Text>
+            <Text
+              as="link"
+              href="mailto:musagillaniwork@gmail.com"
+              type={"secondary"}
+            >
+              musagillaniwork@gmail.com
+            </Text>
           </div>
           <div className="px-2 py-4">
             <Text type={"primary"}>Achievements</Text>
@@ -59,10 +77,12 @@ const Resume = forwardRef<HTMLDivElement>((_, ref) => {
           <Card title="Experience">
             {experiences
               .slice(0, 3)
-              .map(({ company, description, position, tenure }) => (
+              .map(({ company, description, position, tenure, website }) => (
                 <div key={company} className="my-2">
                   <div className="flex items-center justify-between gap-0.5">
-                    <Text type={"primary"}>{company}</Text>
+                    <Text as="link" href={website} type={"primary"}>
+                      {company}
+                    </Text>
                     <Text type={"ternary"}>({tenure})</Text>
                   </div>
                   <Text type={"primary"} size={"sm"}>
@@ -91,13 +111,17 @@ const Resume = forwardRef<HTMLDivElement>((_, ref) => {
                 {github && (
                   <div className="flex justify-between">
                     <Text type="primary">Repo: </Text>
-                    <Text type="secondary">{github}</Text>
+                    <Text as="link" href={`https://${github}`} type="secondary">
+                      {github}
+                    </Text>
                   </div>
                 )}
                 {link && (
                   <div className="flex justify-between">
                     <Text type="primary">website: </Text>
-                    <Text type="secondary">{link}</Text>
+                    <Text as="link" href={link} type="secondary">
+                      {link}
+                    </Text>
                   </div>
                 )}
               </div>

@@ -18,16 +18,30 @@ const textVariants = cva(roboto.className, {
   },
 });
 
-export interface TextProps
-  extends React.ParamHTMLAttributes<HTMLParagraphElement>,
-    VariantProps<typeof textVariants> {}
+type TextLinkProps =
+  | {
+      as?: "link";
+      href: string;
+    }
+  | {
+      as?: "text";
+    };
 
-const Text: React.FC<PropsWithChildren<TextProps>> = ({
-  children,
-  type,
-  size,
-}) => {
-  return <p className={cn(textVariants({ type, size }))}>{children}</p>;
+export type Props = VariantProps<typeof textVariants> & TextLinkProps;
+
+const Text = ({ children, type, size, ...props }: PropsWithChildren<Props>) => {
+  props.as = props.as ?? "text"; // default value
+  if (props.as === "text") {
+    return <p className={cn(textVariants({ type, size }))}>{children}</p>;
+  } else if (props.as === "link") {
+    return (
+      <a href={props.href} className={cn(textVariants({ type, size }))}>
+        {children}
+      </a>
+    );
+  } else {
+    throw new Error("Invalid element type");
+  }
 };
 
 export default Text;

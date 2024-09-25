@@ -6,6 +6,7 @@ import { education } from "@/constants/education";
 import { skills } from "@/constants/skills";
 import { achievements } from "@/constants/achievements";
 import { forwardRef } from "react";
+import { email, github } from "@/constants/info";
 
 export interface ResumeProps {
   mode: "render" | "pdf";
@@ -39,21 +40,13 @@ const Resume = forwardRef<HTMLDivElement, ResumeProps>(({ mode }, ref) => {
             </Text>
             <div className="py-0.5" />
             <Text type={"primary"}>Github: </Text>
-            <Text
-              as="link"
-              href="https://www.github.com/MusaGillani"
-              type={"secondary"}
-            >
-              github.com/MusaGillani
+            <Text as="link" href={`https://www.${github}`} type={"secondary"}>
+              {github}
             </Text>
             <div className="py-0.5" />
             <Text type={"primary"}>Email: </Text>
-            <Text
-              as="link"
-              href="mailto:musagillaniwork@gmail.com"
-              type={"secondary"}
-            >
-              musagillaniwork@gmail.com
+            <Text as="link" href={`mailto:${email}`} type={"secondary"}>
+              {email}
             </Text>
           </div>
           <div className="px-2 py-4">

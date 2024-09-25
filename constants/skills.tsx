@@ -4,7 +4,6 @@ import {
   SiNotion,
   SiPostgresql,
   SiPostman,
-  SiPrisma,
   SiVercel,
   SiNestjs,
   SiVim,
@@ -12,6 +11,7 @@ import {
   SiZedindustries,
   SiBun,
   SiHasura,
+  SiDocker,
 } from "react-icons/si";
 import { FaReact } from "react-icons/fa";
 import { TbBrandNextjs, TbBrandVscode } from "react-icons/tb";
@@ -28,18 +28,18 @@ export const skills = {
       icon: <SiTypescript />,
       href: "https://www.typescriptlang.org/",
     },
-    { title: "Next JS", icon: <TbBrandNextjs />, href: "https://nextjs.org/" },
-    { title: "React JS", icon: <FaReact />, href: "https://react.dev/" },
+    { title: "Next.js", icon: <TbBrandNextjs />, href: "https://nextjs.org/" },
+    { title: "React.js", icon: <FaReact />, href: "https://react.dev/" },
     {
       title: "Tailwind CSS",
       icon: <BiLogoTailwindCss />,
       href: "https://tailwindcss.com/",
     },
-    { title: "Node JS", icon: <IoLogoNodejs />, href: "https://nodejs.org/en" },
+    { title: "Node.js", icon: <IoLogoNodejs />, href: "https://nodejs.org/en" },
     { title: "Bun", icon: <SiBun />, href: "https://bun.sh/" },
-    { title: "Nest JS", icon: <SiNestjs />, href: "https://nestjs.com/" },
+    { title: "Nest.js", icon: <SiNestjs />, href: "https://nestjs.com/" },
     {
-      title: "Express JS",
+      title: "Express.js",
       icon: <SiExpress />,
       href: "https://expressjs.com/",
     },
@@ -77,6 +77,11 @@ export const skills = {
       title: "VS Code",
       icon: <TbBrandVscode />,
       href: "https://code.visualstudio.com/",
+    },
+    {
+      title: "Docker",
+      icon: <SiDocker />,
+      href: "https://www.docker.com/",
     },
     {
       title: "Linux, Bash, Zsh, Fish",

@@ -1,5 +1,5 @@
 "use client";
-import { ChevronDown, FileText, Loader } from "lucide-react";
+import { FileText, Loader } from "lucide-react";
 import { ComponentProps, ComponentType } from "react";
 import dynamic from "next/dynamic";
 import { useCopyToClipboard } from "usehooks-ts";
@@ -26,6 +26,7 @@ import {
 } from "@/components/ui/tooltip";
 
 import Link from "next/link";
+import { email } from "@/constants/info";
 
 const PDFDownloadButton: React.FC = () => {
   return (
@@ -36,10 +37,9 @@ const PDFDownloadButton: React.FC = () => {
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger>
-                  <div className="bg-discord-purple-lightened block rounded-lg p-4 dark:bg-teal-900">
+                  <div className="block rounded-lg bg-discord-purple-lightened p-4 dark:bg-discord-purple">
                     <div className="flex gap-x-3">
                       <FileText />
-                      <ChevronDown />
                     </div>
                   </div>
                 </TooltipTrigger>
@@ -65,8 +65,8 @@ const PDFDownloadButton: React.FC = () => {
 
 const LoadingSkeleton = () => {
   return (
-    <div className="bg-discord-purple-lightened block rounded-lg p-4 dark:bg-teal-900">
-      <Loader className="mx-4 animate-spin" />
+    <div className="block rounded-lg bg-discord-purple-lightened p-4 dark:bg-discord-purple">
+      <Loader className="animate-spin" />
     </div>
   );
 };
@@ -86,9 +86,7 @@ const ListItems: React.FC<{
   const [, copy] = useCopyToClipboard();
   return (
     <>
-      <Component onClick={() => copy("musagillaniwork@gmail.com")}>
-        Copy Email
-      </Component>
+      <Component onClick={() => copy(email)}>Copy Email</Component>
       <Component>
         <Link href={"/resume"}>Download Resume</Link>
       </Component>

@@ -5,9 +5,13 @@ import { useState } from "react";
 
 import { cn } from "@/lib/utils";
 import { sigmar, roboto } from "@/fonts";
-import { AnimatedGithub, AnimatedTwitter } from "@/icons";
-
-const company = null;
+import {
+  AnimatedGithub,
+  AnimatedLinkedIn,
+  AnimatedScroll,
+  AnimatedTwitter,
+} from "@/icons";
+import { company, github, linkedIn, twitter } from "@/constants/info";
 
 const ProfileBio: React.FC<{ className?: string }> = ({ className }) => {
   const [animate, setAnimate] = useState(false);
@@ -29,24 +33,28 @@ const ProfileBio: React.FC<{ className?: string }> = ({ className }) => {
       </h1>
       <p className="text-4xl">Full stack developer, software engineer</p>
       {company && (
-        <p className="text-3xl">
+        <p className={cn("text-2xl")}>
           Currently working{" "}
           <a
-            href="https://devsinc.com/"
-            className="font-bold text-discord-purple"
+            href={company.website}
+            className="text-discord-purple dark:text-discord-purple"
             target="_blank"
           >
-            @{company}
+            @{company.name}
           </a>
         </p>
       )}
       <div className="my-2 flex text-4xl">
-        <a href="https://github.com/MusaGillani" target="_blank">
-          <AnimatedGithub />
-        </a>
-        <a href="https://twitter.com/mosesdotgg" target="_blank">
-          <AnimatedTwitter />
-        </a>
+        <AnimatedGithub href={`https://${github}`} />
+        <AnimatedTwitter href={twitter} />
+        <AnimatedLinkedIn href={linkedIn} />
+        <AnimatedScroll href="/resume" />
+      </div>
+      <div className={cn("text-xl", roboto.className)}>
+        <p>
+          I love to learn about software. Always on the hunt for new Open Source
+          Projects to play around with. Eager to work in teams or solo.
+        </p>
       </div>
     </div>
   );

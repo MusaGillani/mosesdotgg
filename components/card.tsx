@@ -36,7 +36,7 @@ const Card: React.FC<Props> = ({ icon, title, href, index }) => {
     <motion.a
       ref={ref}
       href={href}
-      className="flex h-52 w-full scale-100 flex-col items-center justify-center rounded-xl bg-discord-purple-lightened p-5 shadow-lg transition delay-150 ease-in-out hover:-translate-y-3 hover:-rotate-6 hover:skew-y-3 hover:scale-105 dark:bg-teal-900 md:h-32 md:w-3/4"
+      className="flex h-52 w-full scale-100 flex-col items-center justify-center rounded-xl bg-discord-purple-lightened p-5 shadow-lg transition delay-150 ease-in-out hover:-translate-y-3 hover:-rotate-6 hover:skew-y-3 hover:scale-105 dark:bg-discord-purple md:h-36 md:w-3/4"
       initial={{
         opacity: 0,
       }}

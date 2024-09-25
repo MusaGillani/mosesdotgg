@@ -96,16 +96,18 @@ const ProjectCard: React.FC<Props> = ({
           >
             {github && (
               <div className="m-5 text-3xl sm:m-1">
-                <a href={github} target="_blank">
-                  <AnimatedGithub className="dark:text-white md:text-black" />
-                </a>
+                <AnimatedGithub
+                  href={github}
+                  className="dark:text-white md:text-black"
+                />
               </div>
             )}
             {link && (
               <div className="m-5 text-3xl">
-                <a href={link} target="_blank">
-                  <AnimatedLink className="dark:text-white md:text-black" />
-                </a>
+                <AnimatedLink
+                  href={link}
+                  className="dark:text-white md:text-black"
+                />
               </div>
             )}
           </div>

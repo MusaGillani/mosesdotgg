@@ -26,6 +26,7 @@ import {
 } from "@/components/ui/tooltip";
 
 import Link from "next/link";
+import { email } from "@/constants/info";
 
 const PDFDownloadButton: React.FC = () => {
   return (
@@ -36,7 +37,7 @@ const PDFDownloadButton: React.FC = () => {
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger>
-                  <div className="bg-discord-purple-lightened block rounded-lg p-4 dark:bg-teal-900">
+                  <div className="block rounded-lg bg-discord-purple-lightened p-4 dark:bg-teal-900">
                     <div className="flex gap-x-3">
                       <FileText />
                       <ChevronDown />
@@ -65,7 +66,7 @@ const PDFDownloadButton: React.FC = () => {
 
 const LoadingSkeleton = () => {
   return (
-    <div className="bg-discord-purple-lightened block rounded-lg p-4 dark:bg-teal-900">
+    <div className="block rounded-lg bg-discord-purple-lightened p-4 dark:bg-teal-900">
       <Loader className="mx-4 animate-spin" />
     </div>
   );
@@ -86,9 +87,7 @@ const ListItems: React.FC<{
   const [, copy] = useCopyToClipboard();
   return (
     <>
-      <Component onClick={() => copy("musagillaniwork@gmail.com")}>
-        Copy Email
-      </Component>
+      <Component onClick={() => copy(email)}>Copy Email</Component>
       <Component>
         <Link href={"/resume"}>Download Resume</Link>
       </Component>

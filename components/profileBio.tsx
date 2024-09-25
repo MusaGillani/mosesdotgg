@@ -5,7 +5,8 @@ import { useState } from "react";
 
 import { cn } from "@/lib/utils";
 import { sigmar, roboto } from "@/fonts";
-import { AnimatedGithub, AnimatedTwitter } from "@/icons";
+import { AnimatedGithub, AnimatedLinkedIn, AnimatedTwitter } from "@/icons";
+import { github, linkedIn, twitter } from "@/constants/info";
 
 const company = null;
 
@@ -41,12 +42,9 @@ const ProfileBio: React.FC<{ className?: string }> = ({ className }) => {
         </p>
       )}
       <div className="my-2 flex text-4xl">
-        <a href="https://github.com/MusaGillani" target="_blank">
-          <AnimatedGithub />
-        </a>
-        <a href="https://twitter.com/mosesdotgg" target="_blank">
-          <AnimatedTwitter />
-        </a>
+        <AnimatedGithub href={`https://${github}`} />
+        <AnimatedTwitter href={twitter} />
+        <AnimatedLinkedIn href={linkedIn} />
       </div>
     </div>
   );

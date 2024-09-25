@@ -7,8 +7,8 @@ import { roboto } from "@/fonts";
 import "@/styles/globals.css";
 
 export const metadata: Metadata = {
-  title: "Moses.gg",
-  description: "Welcome to Moses.gg",
+  title: "mosesgg.dev",
+  description: "Welcome to mosesgg.dev",
 };
 
 export default function RootLayout({

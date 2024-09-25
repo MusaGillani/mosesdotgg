@@ -22,20 +22,35 @@ type TextLinkProps =
   | {
       as?: "link";
       href: string;
+      className?: string;
     }
   | {
       as?: "text";
+      className?: string;
     };
 
 export type Props = VariantProps<typeof textVariants> & TextLinkProps;
 
-const Text = ({ children, type, size, ...props }: PropsWithChildren<Props>) => {
+const Text = ({
+  children,
+  type,
+  size,
+  className,
+  ...props
+}: PropsWithChildren<Props>) => {
   props.as = props.as ?? "text"; // default value
   if (props.as === "text") {
-    return <p className={cn(textVariants({ type, size }))}>{children}</p>;
+    return (
+      <p className={cn(textVariants({ type, size }), className)}>{children}</p>
+    );
   } else if (props.as === "link") {
     return (
-      <a href={props.href} className={cn(textVariants({ type, size }))}>
+      <a
+        href={props.href}
+        target="_blank"
+        referrerPolicy="no-referrer"
+        className={cn(textVariants({ type, size }), className)}
+      >
         {children}
       </a>
     );

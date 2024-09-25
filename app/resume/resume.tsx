@@ -6,7 +6,7 @@ import { education } from "@/constants/education";
 import { skills } from "@/constants/skills";
 import { achievements } from "@/constants/achievements";
 import { forwardRef } from "react";
-import { email, github } from "@/constants/info";
+import { email, github, phone, website } from "@/constants/info";
 
 export interface ResumeProps {
   mode: "render" | "pdf";
@@ -31,22 +31,23 @@ const Resume = forwardRef<HTMLDivElement, ResumeProps>(({ mode }, ref) => {
             <p className="text-2xl font-bold text-white">Syed Musa Gillani</p>
             <p className="text-md text-white">Fullstack Engineer</p>
           </div>
-          <div className="px-2 py-4">
+          <div className="flex flex-col px-2 py-4">
             <Text type={"primary"}>Contact Details</Text>
-            <div className="py-0.5" />
-            <Text type={"primary"}>Phone: </Text>
-            <Text as="link" href="tel:+923239810312" type={"secondary"}>
-              +92 323 9810312
+            <Text
+              as="link"
+              href={`tel:${phone.split(" ").join("")}`}
+              type={"secondary"}
+            >
+              {phone}
             </Text>
-            <div className="py-0.5" />
-            <Text type={"primary"}>Github: </Text>
             <Text as="link" href={`https://www.${github}`} type={"secondary"}>
               {github}
             </Text>
-            <div className="py-0.5" />
-            <Text type={"primary"}>Email: </Text>
             <Text as="link" href={`mailto:${email}`} type={"secondary"}>
               {email}
+            </Text>
+            <Text as="link" href={website} type={"secondary"}>
+              {website}
             </Text>
           </div>
           <div className="px-2 py-4">

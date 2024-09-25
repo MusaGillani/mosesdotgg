@@ -29,7 +29,10 @@ const Footer: React.FC<{ className?: string }> = ({ className }) => {
           {projects.find((project) => project.name === "Moses.gg")!.tech}
         </p>
       </div>
-      <p className="mb-10 text-center">Moses.gg {new Date().getFullYear()}</p>
+      <p className={"mb-10 text-center"}>
+        <span className={sigmar.className}>MOSES.GG</span>{" "}
+        {new Date().getFullYear()}
+      </p>
     </>
   );
 };

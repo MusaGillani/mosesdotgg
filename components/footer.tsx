@@ -26,11 +26,11 @@ const Footer: React.FC<{ className?: string }> = ({ className }) => {
       <div className="my-5 flex w-full items-center justify-center">
         <p className={cn(roboto.className)}>
           Crafted with{" "}
-          {projects.find((project) => project.name === "Moses.gg")!.tech}
+          {projects.find((project) => project.name === "mosesgg.dev")!.tech}
         </p>
       </div>
       <p className={"mb-10 text-center"}>
-        <span className={sigmar.className}>MOSES.GG</span>{" "}
+        <span className={sigmar.className}>mosesgg.dev</span>{" "}
         {new Date().getFullYear()}
       </p>
     </>

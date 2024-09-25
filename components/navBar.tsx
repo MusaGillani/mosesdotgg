@@ -24,7 +24,7 @@ const NavBar: React.FC<{ className?: string }> = ({ className }) => {
         <p
           className={`text-3xl text-black dark:text-white ${sigmar.className}`}
         >
-          MOSES.GG
+          MOSESGG.DEV
         </p>
         <div className="flex items-center gap-x-3">
           <ThemeSwitch />

@@ -6,7 +6,7 @@ import giki from "@/public/giki.png";
 import flutter from "@/public/flutter.png";
 import devsinc from "@/public/devsinc.png";
 import mosesgg from "@/public/mosesgg.png";
-import { github } from "./info";
+import { github, website } from "./info";
 
 export const projects: {
   name: string;
@@ -26,12 +26,13 @@ export const projects: {
     imageSrc: porchpass,
   },
   {
-    name: "Moses.gg",
+    name: "mosesgg.dev",
     type: "Personal Project",
     tech: "Next.js , ShadCn UI, Framer Motion",
     github: github + "/mosesdotgg",
     desc: "Personal Website served as a Portfolio",
     imageSrc: mosesgg,
+    link: website,
   },
   {
     name: "R-APP",

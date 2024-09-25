@@ -4,7 +4,6 @@ import ProfileBio from "@/components/profileBio";
 import Skills from "@/components/skills";
 import Experience from "@/components/experience";
 import Projects from "@/components/projects";
-import Banner from "@/components/banner";
 import Footer from "@/components/footer";
 
 export default function Home() {

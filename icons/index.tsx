@@ -2,6 +2,7 @@
 import { VscGithubInverted } from "react-icons/vsc";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { Link } from "lucide-react";
+import { LuScroll } from "react-icons/lu";
 import { SiLinkedin } from "react-icons/si";
 import { ReactNode } from "react";
 import { motion } from "framer-motion";
@@ -36,6 +37,32 @@ const AnimatedLinkIcon = ({ icon, href, className }: AnimatedLinkIconProps) => {
       >
         {icon}
       </motion.div>
+    </motion.a>
+  );
+};
+
+const BouncingLinkIcon = ({ icon, href, className }: AnimatedLinkIconProps) => {
+  return (
+    <motion.a
+      href={href}
+      target="_blank"
+      initial="initial"
+      animate="animate"
+      className={cn("relative", className)}
+      variants={{
+        initial: { y: 0 },
+        animate: {
+          y: [0, -10, 0], // Move up and back down
+          transition: {
+            duration: 1,
+            ease: "easeInOut",
+            repeat: Infinity, // Continuous animation
+            repeatType: "loop",
+          },
+        },
+      }}
+    >
+      {icon}
     </motion.a>
   );
 };
@@ -78,6 +105,16 @@ export const AnimatedLink: React.FC<AnimatedIconProps> = ({
 }) => (
   <AnimatedLinkIcon
     icon={<Link className={cn("m-2", className)} />}
+    href={href}
+  />
+);
+
+export const AnimatedScroll: React.FC<AnimatedIconProps> = ({
+  href,
+  className,
+}) => (
+  <BouncingLinkIcon
+    icon={<LuScroll className={cn("m-2", className)} />}
     href={href}
   />
 );

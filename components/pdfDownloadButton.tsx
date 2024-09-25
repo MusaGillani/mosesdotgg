@@ -1,5 +1,5 @@
 "use client";
-import { ChevronDown, FileText, Loader } from "lucide-react";
+import { FileText, Loader } from "lucide-react";
 import { ComponentProps, ComponentType } from "react";
 import dynamic from "next/dynamic";
 import { useCopyToClipboard } from "usehooks-ts";
@@ -40,7 +40,6 @@ const PDFDownloadButton: React.FC = () => {
                   <div className="block rounded-lg bg-discord-purple-lightened p-4 dark:bg-teal-900">
                     <div className="flex gap-x-3">
                       <FileText />
-                      <ChevronDown />
                     </div>
                   </div>
                 </TooltipTrigger>
@@ -67,7 +66,7 @@ const PDFDownloadButton: React.FC = () => {
 const LoadingSkeleton = () => {
   return (
     <div className="block rounded-lg bg-discord-purple-lightened p-4 dark:bg-teal-900">
-      <Loader className="mx-4 animate-spin" />
+      <Loader className="animate-spin" />
     </div>
   );
 };

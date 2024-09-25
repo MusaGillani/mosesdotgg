@@ -37,7 +37,7 @@ const PDFDownloadButton: React.FC = () => {
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger>
-                  <div className="block rounded-lg bg-discord-purple-lightened p-4 dark:bg-teal-900">
+                  <div className="block rounded-lg bg-discord-purple-lightened p-4 dark:bg-discord-purple">
                     <div className="flex gap-x-3">
                       <FileText />
                     </div>
@@ -65,7 +65,7 @@ const PDFDownloadButton: React.FC = () => {
 
 const LoadingSkeleton = () => {
   return (
-    <div className="block rounded-lg bg-discord-purple-lightened p-4 dark:bg-teal-900">
+    <div className="block rounded-lg bg-discord-purple-lightened p-4 dark:bg-discord-purple">
       <Loader className="animate-spin" />
     </div>
   );

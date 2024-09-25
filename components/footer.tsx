@@ -16,7 +16,7 @@ const Footer: React.FC<{ className?: string }> = ({ className }) => {
             I&apos;m reachable at{" "}
             <a
               href={`mailto:${email}`}
-              className="text-xl font-bold text-discord-purple dark:text-teal-900"
+              className="text-xl font-bold text-discord-purple dark:text-discord-purple"
             >
               {email}
             </a>

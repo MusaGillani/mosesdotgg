@@ -12,7 +12,7 @@ function Page() {
     method: "save",
     filename: "musagillani-resume.pdf",
     page: { margin: 0.1 },
-    resolution: Resolution.LOW,
+    resolution: Resolution.NORMAL,
   });
 
   const [downloading, setDownloading] = useState(false);

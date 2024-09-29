@@ -55,7 +55,7 @@ const ProfileBio: React.FC<{ className?: string }> = ({ className }) => {
           <AnimatedGithub href={`https://${github}`} />
           <AnimatedTwitter href={twitter} />
           <AnimatedLinkedIn href={linkedIn} />
-          <AnimatedScroll href="/resume" />
+          <AnimatedScroll href="/resume" target="_self" />
         </div>
       </div>
       <div className={cn("text-pretty text-xl", roboto.className)}>

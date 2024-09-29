@@ -1,6 +1,6 @@
 "use client";
 import Resume from "./resume";
-import { usePDF } from "react-to-pdf";
+import { Resolution, usePDF } from "react-to-pdf";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -12,6 +12,7 @@ function Page() {
     method: "save",
     filename: "musagillani-resume.pdf",
     page: { margin: 0.1 },
+    resolution: Resolution.NORMAL,
   });
 
   const [downloading, setDownloading] = useState(false);

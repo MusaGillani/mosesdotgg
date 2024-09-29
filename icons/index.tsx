@@ -4,7 +4,7 @@ import { FaSquareXTwitter } from "react-icons/fa6";
 import { Link } from "lucide-react";
 import { LuScroll } from "react-icons/lu";
 import { SiLinkedin } from "react-icons/si";
-import { ReactNode } from "react";
+import { HTMLAttributeAnchorTarget, ReactNode } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -12,13 +12,19 @@ interface AnimatedLinkIconProps {
   icon: ReactNode;
   href: string;
   className?: string;
+  target?: HTMLAttributeAnchorTarget;
 }
 
-const AnimatedLinkIcon = ({ icon, href, className }: AnimatedLinkIconProps) => {
+const AnimatedLinkIcon = ({
+  icon,
+  href,
+  className,
+  target = "_blank",
+}: AnimatedLinkIconProps) => {
   return (
     <motion.a
       href={href}
-      target="_blank"
+      target={target}
       whileHover="hover"
       initial="initial"
       className={cn("relative", className)}
@@ -41,11 +47,16 @@ const AnimatedLinkIcon = ({ icon, href, className }: AnimatedLinkIconProps) => {
   );
 };
 
-const BouncingLinkIcon = ({ icon, href, className }: AnimatedLinkIconProps) => {
+const BouncingLinkIcon = ({
+  icon,
+  href,
+  className,
+  target = "_blank",
+}: AnimatedLinkIconProps) => {
   return (
     <motion.a
       href={href}
-      target="_blank"
+      target={target}
       initial="initial"
       animate="animate"
       className={cn("relative", className)}

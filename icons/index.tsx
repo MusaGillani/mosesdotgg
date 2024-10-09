@@ -122,10 +122,12 @@ export const AnimatedLink: React.FC<AnimatedIconProps> = ({
 
 export const AnimatedScroll: React.FC<AnimatedIconProps> = ({
   href,
+  target,
   className,
 }) => (
   <BouncingLinkIcon
     icon={<LuScroll className={cn("m-2", className)} />}
     href={href}
+    target={target}
   />
 );

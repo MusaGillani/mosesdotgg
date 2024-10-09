@@ -52,7 +52,7 @@ const ProfileBio: React.FC<{ className?: string }> = ({ className }) => {
           </p>
         )}
         <div className="my-2 flex text-4xl">
-          <AnimatedGithub href={`https://${github}`} />
+          <AnimatedGithub href={github} />
           <AnimatedTwitter href={twitter} />
           <AnimatedLinkedIn href={linkedIn} />
           <AnimatedScroll href="/resume" target="_self" />

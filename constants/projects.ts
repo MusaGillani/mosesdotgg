@@ -21,7 +21,7 @@ export const projects: {
     name: "Porchpass",
     type: "Client Project",
     tech: "Next.js , ShadCn UI, Hasura GraphQL, Nest.js",
-    link: "braustin.porchpass.io",
+    link: "https://braustin.porchpass.io",
     desc: "An application designed for new home owners to easily apply for and secure Manufactured Home Financing",
     imageSrc: porchpass,
   },

@@ -18,9 +18,9 @@ const Projects: React.FC<{ className?: string }> = ({ className }) => {
             type={type}
             description={desc}
             technologies={tech}
-            github={github && `https://${github}`}
+            github={github}
             imageSrc={imageSrc}
-            link={link && `https://${link}`}
+            link={link}
             rightShift={(index + 1) % 2 === 0}
           />
         ),

@@ -40,7 +40,7 @@ const Resume = forwardRef<HTMLDivElement, ResumeProps>(({ mode }, ref) => {
             >
               {phone}
             </Text>
-            <Text as="link" href={`https://www.${github}`} type={"secondary"}>
+            <Text as="link" href={github} type={"secondary"}>
               {github}
             </Text>
             <Text as="link" href={`mailto:${email}`} type={"secondary"}>
@@ -105,7 +105,7 @@ const Resume = forwardRef<HTMLDivElement, ResumeProps>(({ mode }, ref) => {
                 {github && (
                   <div className="flex justify-between">
                     <Text type="primary">Repo: </Text>
-                    <Text as="link" href={`https://${github}`} type="secondary">
+                    <Text as="link" href={github} type="secondary">
                       {github}
                     </Text>
                   </div>

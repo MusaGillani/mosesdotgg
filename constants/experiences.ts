@@ -10,7 +10,7 @@ export const experiences: {
     company: "Auxcube",
     position: "Software Engineer",
     location: "Remote",
-    tenure: "Dec, 2023 - present",
+    tenure: "Dec, 2023 - Nov, 2024",
     website: "https://www.auxcube.com/",
     description: [
       "Fullstack web based solutions using the bleeding edge versions of React.js, Next.js, Typescript",

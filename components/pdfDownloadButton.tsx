@@ -26,7 +26,7 @@ import {
 } from "@/components/ui/tooltip";
 
 import Link from "next/link";
-import { email } from "@/constants/info";
+import { email, resumeGistLink } from "@/constants/info";
 
 const PDFDownloadButton: React.FC = () => {
   return (
@@ -79,17 +79,24 @@ const PDFDownloadButtonNoSSR = dynamic(
 export default PDFDownloadButtonNoSSR;
 
 const ListItems: React.FC<{
-  Component: ComponentType<
-    ComponentProps<typeof DropdownMenuItem | typeof ContextMenuItem>
-  >;
+	Component: ComponentType<
+		ComponentProps<typeof DropdownMenuItem | typeof ContextMenuItem>
+	>;
 }> = ({ Component }) => {
-  const [, copy] = useCopyToClipboard();
-  return (
-    <>
-      <Component onClick={() => copy(email)}>Copy Email</Component>
-      <Component>
-        <Link href={"/resume"}>Download Resume</Link>
-      </Component>
-    </>
-  );
+	const [, copy] = useCopyToClipboard();
+	return (
+		<>
+			<Component onClick={() => copy(email)}>Copy Email</Component>
+			{/* FIXME: enable this */}
+			{/* <Component>
+				<Link href={"/resume"}>View Resume</Link>
+			</Component> */}
+			{/* // TODO, move this to the view page itself */}
+			<Component>
+				<a href={resumeGistLink} download>
+					Download Resume
+				</a>
+			</Component>
+		</>
+	);
 };

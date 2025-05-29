@@ -11,7 +11,7 @@ import {
   AnimatedScroll,
   AnimatedTwitter,
 } from "@/icons";
-import { company, github, linkedIn, twitter } from "@/constants/info";
+import { company, github, linkedIn, resumeGistLink, twitter } from "@/constants/info";
 
 const ProfileBio: React.FC<{ className?: string }> = ({ className }) => {
   const [animate, setAnimate] = useState(false);
@@ -55,14 +55,11 @@ const ProfileBio: React.FC<{ className?: string }> = ({ className }) => {
           <AnimatedGithub href={github} />
           <AnimatedTwitter href={twitter} />
           <AnimatedLinkedIn href={linkedIn} />
-          <AnimatedScroll href="/resume" target="_self" />
+          <AnimatedScroll href={resumeGistLink} target="_self" />
         </div>
       </div>
       <div className={cn("text-pretty text-xl", roboto.className)}>
-        <p>
-          I love to learn about software. Always on the hunt for new Open Source
-          Projects to play around with. <br /> Eager to work in teams or solo.
-        </p>
+        <p>Stuck in Neovim for the wrong reasons, should&apos;ve stuck to zed</p>
       </div>
     </div>
   );

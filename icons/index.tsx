@@ -60,6 +60,7 @@ const BouncingLinkIcon = ({
       initial="initial"
       animate="animate"
       className={cn("relative", className)}
+      download
       variants={{
         initial: { y: 0 },
         animate: {

@@ -11,6 +11,23 @@ const nextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return [
+      {
+        source: '/resume',
+        destination: '/',
+      },
+    ]
+  },
+  async redirects() {
+    return [
+      {
+        source: '/resume',
+        destination: '/',
+        permanent: true,
+      },
+    ]
+  },
 };
 
 module.exports = nextConfig;

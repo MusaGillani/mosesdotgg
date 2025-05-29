@@ -7,6 +7,16 @@ export const experiences: {
   description: string[];
 }[] = [
   {
+      company: "TripleTree Solutions",
+      position: "Frontend Engineer",
+      location: "Remote",
+      tenure: "Jan, 2025 - Present",
+      website: "https://www.3-tree.com/cmqc.html",
+      description: [
+        "Developing Colordesq, a solution for real time color evaluation and approvals.",
+      ],
+    },
+  {
     company: "Auxcube",
     position: "Software Engineer",
     location: "Remote",

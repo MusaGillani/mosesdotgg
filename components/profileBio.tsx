@@ -59,10 +59,7 @@ const ProfileBio: React.FC<{ className?: string }> = ({ className }) => {
         </div>
       </div>
       <div className={cn("text-pretty text-xl", roboto.className)}>
-        <p>
-          I love to learn about software. Always on the hunt for new Open Source
-          Projects to play around with. <br /> Eager to work in teams or solo.
-        </p>
+        <p>Stuck in Neovim for the wrong reasons, should&apos;ve stuck to zed</p>
       </div>
     </div>
   );
